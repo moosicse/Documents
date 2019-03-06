@@ -10,3 +10,4 @@ This repo contains the project's documents.
 ## Guidance
 
 - [Django Guidance](./Guidance/Django.md)
+- [Django Rest Framework Guidance](./Guidance/DRF.md)
