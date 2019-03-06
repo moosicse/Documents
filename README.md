@@ -6,3 +6,7 @@ This repo contains the project's documents.
 
 - [Code Style and Standards](./ForDev/CodeStyleAndStandards.md)
 - [Code Commit Standards](./ForDev/CodeCommitStandards.md)
+
+## Guidance
+
+- [Django Guidance](./Guidance/Django.md)
