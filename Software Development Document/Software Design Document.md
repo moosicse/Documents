@@ -65,7 +65,7 @@ Therefore, we divide the Controller into two parts, one is the Views part of the
 
 ## 3.2 External Architecture
 
-
+## 3.3 Source Code Architecture
 
 # 4. Decomposition Description 
 
