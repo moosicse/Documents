@@ -44,11 +44,13 @@ No content yet.
 
 Module Music is the most important module of this project. It provides a fully controller of music in one website. Music's information is stored here, working together with the music's service and views to provide the operation for both user and staff.
 
-#### Module Scope
+#### Scope
 
 Module Music mainly stores music-related data in a narrow range, such as the song's name, song files, foreign keys of a singer and so forth. The music module does not process other related information, such as albums, singers, this part of the information is stored by the extra module, and only the foreign keys are processed in the music module. 
 
-Module Music contains one of the most significant service of this project - mood recognition service. Although the mood recognition module is not a separate module, it needs to be a separate service and belongs to the Module Music. To get a brief description and detailed design information, please refer to the [7.3 Service Detailed Design](#7.3 Service Detailed Design).    TODO: Finish this hash tag link. 
+Module Music contains one of the most significant service of this project - mood recognition service. Although the mood recognition module is not a separate module, it needs to be a separate service and belongs to the Module Music. To get a brief description and detailed design information, please refer to the [7.3 Service Detailed Design](#7.3 Service Detailed Design).    
+
+TODO: Finish this hash tag link. 
 
 ### 4.1.2 Module User
 
@@ -76,13 +78,13 @@ Here are a decomposition of several business processes that will be widely used.
 
 ## 5.4 Automatic Build Dependency
 
-# 6 Interface Description
+# 6 Interface and Service Description
 
 ## 6.1 User Interface Description
 
 ## 6.2 Internal Interface Description
 
-## 6.3 External Interface Description
+## 6.3 Service Description
 
 # 7 Detailed Design
 
