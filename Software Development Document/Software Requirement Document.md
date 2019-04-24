@@ -117,6 +117,8 @@ User interaction is largely graphical based using principles from perceptual hum
 The GUI is based on a website,and the design is made a reference to the Netease Cloud Music[1] and QQ music[2] on website.
 The preliminary design style of the user interface is shown in the figure 1 below.
 
+![](Interface_style.png)
+
 ### 4.1.2 API
 
 - Camera
