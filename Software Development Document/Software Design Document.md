@@ -2,9 +2,7 @@
 
 __Project Moosic__
 
-Author: 
-
-
+Author: Touko
 
 # 1. Introduction
 
@@ -34,7 +32,7 @@ No content yet.
 
 ## 3.1 Internal Architecture
 
-### 3.1.2 Brief Introduction
+### 3.1.1 Brief Introduction
 
 The Moosic project uses MVC's software architecture. It layers data, views, and controllers to ensure that the software is loosely coupled in the vertical direction. Part M (Model) is focused on data processing, Part V (View) is responsible for software interface rendering, user interface and user interaction, and Part C (Controller) is responsible for data processing and connecting parts M and V .
 
@@ -64,6 +62,21 @@ Second, in the MVC architecture, the Controller is the part we need most unit te
 Therefore, we divide the Controller into two parts, one is the Views part of the Django framework, and the other is the Services section we specify. Views provides backend rendering in the original Django framework. But in this project, the Views section will focus on the packaging of the API. Thanks to the good interface and reliable packaging provided by Django-Rest-Framework, Views can be efficiently designed as CURD. But why do we have to be a separate service? Considering the coupling of the code and the possible reuse, it is a wise choice to separate some of the general logic or complex logic into Services. This design can provide a better Debug environment for subsequent development.
 
 ## 3.2 External Architecture
+
+### 3.1.1 Brief Introduction
+
+As mentioned above, we will use a separate architecture at the frontend and backend, with the connection of database located at the side of backend. A more detailed description of the external architecture of this program is provided below.
+
+### 3.1.2 Design Concept
+
+The program will be divided into frontend and backend for development. The frontend and backend are each placed in different code repositories, using different languages but sharing the same set of APIs and data structures. 
+
+#### Frontend Internal Structure
+
+When the user opens the browser and accesses our web page, the browser's URL will be forwarded to index.html. This logic is implemented by Nginx. The first thing that is presented to the user is the layout of the frontend. Layout includes Header, Footer, Navigator (Menu) and Content. The Content section will be routed by the URL to distribute the user to different pages.
+The frontend will be divided into modules. There is a route inside each module to control the routing of pages within the module. Software frontend routing will be structured as follows. The global route first directs the user to a different module based on the URL matching result. The intra-module routes are then matched to provide user interaction and other related services.
+
+#### Frontend External Structure
 
 ## 3.3 Source Code Architecture
 
