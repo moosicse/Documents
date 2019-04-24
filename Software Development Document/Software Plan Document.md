@@ -55,10 +55,10 @@ Each member of the team can make their own opinions regardless of their role, an
 
 ## 3.2 Work Plan
 
-1~6 week：Finish the SRS and SPMP documents
-7~10 week：Finish the Architecture Designment and SDD document
-11~13 week：Finish testing
-14~15 week：Finish the software delivery and write the summary document
+1-6 week：Finish the SRS and SPMP documents
+7-10 week：Finish the Architecture Designment and SDD document
+11-13 week：Finish testing
+14-15 week：Finish the software delivery and write the summary document
 ## 3.3 Control Plan
 
 The person in charge of each development process records the progress of the work on a half-month basis, forms an electronic document report, and uploads it to the document library. The person in charge will make an online summary at the weekly meeting, and the other members will give their opinions through the review, and the report will be uploaded to the document library after modification. The risk leader closely monitors the risk status, submits a risk report on a regular basis, and notifies all team members of the emergency mailing list if necessary, and the team leader makes a temporary decision. At the weekly meeting, the group discussion will be adopted after the consensus is reached. The relevant responsible person will carry out the next week's work on the improvement opinions, and the group meeting will continue to evaluate its effectiveness. Before the end of each project phase (before and after the milestone), organize a phase review meeting to assess the efficiency and quality of the results throughout the phase. Try to merge with the regular meeting of the project and invite teachers and QA to participate in the review.
