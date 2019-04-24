@@ -119,9 +119,9 @@ The preliminary design style of the user interface is shown in the figure 1 belo
 
 ### 4.1.2 API
 
--Camera
--Emotion detection and recognition
--Music emotion recognition(optional)
+- Camera
+- Emotion detection and recognition
+- Music emotion recognition(optional)
 
 ## 4.2 Hardware Interfaces
 
