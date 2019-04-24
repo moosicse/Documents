@@ -32,20 +32,20 @@ Democratic organizational structure, the decisions in the development are made t
 ## 1.2 External Interfaces
 
 __Table: *Table 1 External Interfaces*__
-Organizations|Contacts|Contact Info
-:-----------:|:------:|:----------:
-Instructor|Teacher Wu|wuchxcourse@sina.com
-QA|JeremyCJM|2673001732@qq.com
-Principal|Touko|touko@whu.edu.cn
+|Organizations|Contacts|Contact Info|
+|:-----------:|:------:|:----------:|
+|Instructor|Teacher Wu|wuchxcourse@sina.com|
+|QA|JeremyCJM|2673001732@qq.com|
+|Principal|Touko|touko@whu.edu.cn|
 
 ## 1.3 Roles and Responsibilities
 
 __Table: *Table 2 Roles and Responsibilities*__
-Role|Responsibility|Person
-:--:|:------------:|:----:
-Product Manager|Requirements analysis, software architecture design|Touko
-Developer|Concrete functions realization|Kyrie, JeremyCJM
-Tester|Code testing, software quality assurace|Colorofnight
+|Role|Responsibility|Person|
+|:--:|:------------:|:----:|
+|Product Manager|Requirements analysis, software architecture design|Touko|
+|Developer|Concrete functions realization|Kyrie, JeremyCJM|
+|Tester|Code testing, software quality assurace|Colorofnight|
 
 # 3. Management Process Plan
 
@@ -66,14 +66,14 @@ The person in charge of each development process records the progress of the wor
 ## 3.4 Risk Management Plan
 
 __Table: *Table 3 Risk Management Plan*__
-Risk ID|Risk|Probability|Impact|Priority|Mitigating|principal|Expected Date
-:-----:|:--:|:---------:|-----:|:------:|:--------:|:-------:|:-----------:
-1|Development skill is not mature|60%|disaster|high	Develop a study plan in advance;Reduce design difficulty|Touko|Before 8th week
-2|Facial emotion recognition model has low accuracy|70%|serious|high|Test the machine learning model with new data, add new data for training if necessary, adjust parameters appropriately, and take care to prevent overfitting|JeremyCJM,Kyrie|Before 9th week
-3|Training time is too long|70%|serious|high|Be careful to use vector operations when writing neural network models; use a computer with GPU for training|JeremyCJM|10th week
-4|The player cannot play the music fluently|60%|serious|high|Research on streaming media loading, preloading and caching in advance|Touko,Kyrie|12th week
-5|Frequent demand changes|50%|serious|medium|Demand development fully foresaw the future;More communication with the QA group;Design plan leaves room for change|Colorofnight|8th week
-6|Lack of design talent|50%|medium|high|The team members have in-depth study of relevant knowledge; Seeking foreign aid to help|Colorofnight|10th week
+|Risk ID|Risk|Probability|Impact|Priority|Mitigating|principal|Expected Date|
+|:-----:|:--:|:---------:|-----:|:------:|:--------:|:-------:|:-----------:|
+|1|Development skill is not mature|60%|disaster|high	Develop a study plan in advance;Reduce design difficulty|Touko|Before 8th week|
+|2|Facial emotion recognition model has low accuracy|70%|serious|high|Test the machine learning model with new data, add new data for training if necessary, adjust parameters appropriately, and take care to prevent overfitting|JeremyCJM,Kyrie|Before 9th week|
+|3|Training time is too long|70%|serious|high|Be careful to use vector operations when writing neural network models; use a computer with GPU for training|JeremyCJM|10th week|
+|4|The player cannot play the music fluently|60%|serious|high|Research on streaming media loading, preloading and caching in advance|Touko,Kyrie|12th week|
+|5|Frequent demand changes|50%|serious|medium|Demand development fully foresaw the future;More communication with the QA group;Design plan leaves room for change|Colorofnight|8th week|
+|6|Lack of design talent|50%|medium|high|The team members have in-depth study of relevant knowledge; Seeking foreign aid to help|Colorofnight|10th week|
 
 A detailed description of the risks is as follows:
 - Risk 1: Unskilled development techniques
@@ -121,12 +121,12 @@ Based on the completion of the basic functions, the project documentation and co
 ## 5.1 Inner Support
 
 __Table: *Table 4 Inner Support*__
-Support Project|Principal|Product|Description
-:-------------:|:-------:|:-----:|:---------:
-Document Writing|JeremyCJM|a complete set of project documentation|Communicate within the group and interview with the QA team to confirm the requirements specification
-System Design|Kyrie|Software design document|Qualified system design based on requirements documentation
-Code Test|Touko|Code|Write project source code and unit test	
-Software Delivery|Colorofnight|Delivery of documents and finished software|Final closing and writing a summary document
+|Support Project|Principal|Product|Description|
+|:-------------:|:-------:|:-----:|:---------:|
+|Document Writing|JeremyCJM|a complete set of project documentation|Communicate within the group and interview with the QA team to confirm the requirements specification|
+|System Design|Kyrie|Software design document|Qualified system design based on requirements documentation|
+|Code Test|Touko|Code|Write project source code and unit test|
+|Software Delivery|Colorofnight|Delivery of documents and finished software|Final closing and writing a summary document|
 
 ## 5.2 Testing Plan
 
@@ -135,14 +135,14 @@ Software Delivery|Colorofnight|Delivery of documents and finished software|Final
 #### 5.2.1.1 Features to be tested
 
 __Table: *Table 5 Features to be tested*__
-Module Name|Description|Tester
-:---------:|:---------:|:----:
-Music Player|The music player should be able to play fluently and pause or resume a music|Colorofnight
-Face emotion recognition|The emotion of a user should be accurately recognized|Kyrie
-Music emotion classification|The emotion of a music should be accurately classified|JeremyCJM
-Matching the emotion of music with user’s mood|The emotion of music should be matched with the emotion of user|Colorofnight
-Music Management|Users should be able to manage their own music, including uploading, downloading and deleting, and can set the music as a favorite, create a song list and add songs to the song list|Touko
-Music community|Users should be able to post their own comments under each song and share song links to their like-minded friends|Touko
+|Module Name|Description|Tester|
+|:---------:|:---------:|:----:|
+|Music Player|The music player should be able to play fluently and pause or resume a music|Colorofnight|
+|Face emotion recognition|The emotion of a user should be accurately recognized|Kyrie|
+|Music emotion classification|The emotion of a music should be accurately classified|JeremyCJM|
+|Matching the emotion of music with user’s mood|The emotion of music should be matched with the emotion of user|Colorofnigh|
+|Music Management|Users should be able to manage their own music, including uploading, downloading and deleting, and can set the music as a favorite, create a song list and add songs to the song list|Touko|
+|Music community|Users should be able to post their own comments under each song and share song links to their like-minded friends|Touko|
 
 
 #### 5.2.1.2 Features not to be tested
