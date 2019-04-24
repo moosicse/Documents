@@ -31,6 +31,7 @@ Democratic organizational structure, the decisions in the development are made t
 
 ## 1.2 External Interfaces
 
+__Table: *Table 1 External Interfaces*__
 Organizations|Contacts|Contact Info
 :-----------:|:------:|:----------:
 Instructor|Teacher Wu|wuchxcourse@sina.com
@@ -39,6 +40,7 @@ Principal|Touko|touko@whu.edu.cn
 
 ## 1.3 Roles and Responsibilities
 
+__Table: *Table 2 Roles and Responsibilities*__
 Role|Responsibility|Person
 :--:|:------------:|:----:
 Product Manager|Requirements analysis, software architecture design|Touko
@@ -63,6 +65,7 @@ The person in charge of each development process records the progress of the wor
 
 ## 3.4 Risk Management Plan
 
+__Table: *Table 3 Risk Management Plan*__
 Risk ID|Risk|Probability|Impact|Priority|Mitigating|principal|Expected Date
 :-----:|:--:|:---------:|-----:|:------:|:--------:|:-------:|:-----------:
 1|Development skill is not mature|60%|disaster|high	Develop a study plan in advance;Reduce design difficulty|Touko|Before 8th week
@@ -117,7 +120,13 @@ Based on the completion of the basic functions, the project documentation and co
 
 ## 5.1 Inner Support
 
-//TODO 这个表要怎么画
+__Table: *Table 4 Inner Support*__
+Support Project|Principal|Product|Description
+:-------------:|:-------:|:-----:|:---------:
+Document Writing|JeremyCJM|a complete set of project documentation|Communicate within the group and interview with the QA team to confirm the requirements specification
+System Design|Kyrie|Software design document|Qualified system design based on requirements documentation
+Code Test|Touko|Code|Write project source code and unit test	
+Software Delivery|Colorofnight|Delivery of documents and finished software|Final closing and writing a summary document
 
 ## 5.2 Testing Plan
 
@@ -125,6 +134,7 @@ Based on the completion of the basic functions, the project documentation and co
 
 #### 5.2.1.1 Features to be tested
 
+__Table: *Table 5 Features to be tested*__
 Module Name|Description|Tester
 :---------:|:---------:|:----:
 Music Player|The music player should be able to play fluently and pause or resume a music|Colorofnight
