@@ -78,7 +78,13 @@ The frontend will be divided into modules. There is a route inside each module t
 
 #### Frontend External Structure
 
-To get a compact and scalable structure, we use Nginx as the web server program. It provides two basic function: Web Server and Reverse Proxy Server. Nginx will open a web access port to the frontend page after the compilation and build, and provide access to the user's frontend web page. At the same time, the backend Django will be reverse proxyed. The purpose of this is to prevent browsers from cross origin errors and providing users with secure web access.
+To get a compact and scalable structure, we use Nginx as the web server program. It provides two basic function: Web Server and Reverse Proxy Server. Nginx will open a web access port to the frontend page after the compilation and build, and provide access to the user's frontend web page. At the same time, the backend Django will be reverse proxyed. The purpose of this is to prevent browsers from cross origin errors and providing users with secure web access. 
+
+#### Backend Structure
+
+The backend provides API services to frontend web pages through Nginx's reverse proxy. The backend is also divided into modules. The module takes Model as the core and provides API through Views and Services in the Controller layer. At the same time, parts such as event triggers, global constants, and timing parallel tasks may exist in the module at the same time. The module was previously associated with the global settings file, using Django's own routing for access control between different APIs.
+
+The backend currently uses the SQLite3 database. As a start-up project, the database pressure is not large, so there is no need to use a commercial high-concurrency high-stress database. The program's music files are allowed to be stored in multiple sources. The current server, third-party storage repository or CDN can be used as the storage location for static music files. The cache uses the native memory cache. It is expected that the larger cache will not be used at present, and there is no need to worry about cache hot swap.
 
 ## 3.3 Source Code Architecture
 
