@@ -78,6 +78,8 @@ The frontend will be divided into modules. There is a route inside each module t
 
 #### Frontend External Structure
 
+To get a compact and scalable structure, we use Nginx as the web server program. It provides two basic function: Web Server and Reverse Proxy Server. Nginx will open a web access port to the frontend page after the compilation and build, and provide access to the user's frontend web page. At the same time, the backend Django will be reverse proxyed. The purpose of this is to prevent browsers from cross origin errors and providing users with secure web access.
+
 ## 3.3 Source Code Architecture
 
 # 4. Decomposition Description 
