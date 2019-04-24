@@ -1,6 +1,6 @@
 # Software Requirement Document
 
-__project Moosic__
+__Project Moosic__
 
 Author: Colorofnight
 
@@ -12,7 +12,7 @@ The purpose of this document is to provide a reference and overview of the requi
 
 ## 1.2 Scope of this document
 
-The requirement elicitation consisted of Touko, JeremyCJM, Colorofnight and kyrie. These members were responsible for obtaining and presenting the requirement information that exists in this document.
+The requirement elicitation consisted of Touko, JeremyCJM, Colorofnight and Kyrie. These members were responsible for obtaining and presenting the requirement information that exists in this document.
 
 ## 1.3 Overview
 
