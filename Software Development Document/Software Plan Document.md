@@ -11,11 +11,11 @@ Author: JeremyCJM
 The goal of this project is to develop a web-based music player that can play specific music that matches users’ mood. The documents will be released at the same time.
 Milestones include the releasing of Software Requirement Specification, Software Management Plan, Software Design Description. The whole estimated develop period is 15 weeks.
 
-##1.2 Product Delivery
+## 1.2 Product Delivery
 
 The delivery date is June 1. Delivery content mainly include executable server program and server code, a set of executable web applications and web application source code, a complete set of technical documentation, including requirements specifications, system design specifications and other software documentation.
 
-##1.3 Timeline
+## 1.3 Timeline
 
 a. Before April 25, 2019
 Complete investigating and researching works, summarize concrete requirements. Realize the fundamental UI
@@ -93,7 +93,7 @@ During the design and development process, it may be found that the original req
 - Risk 6: Lack of design talent
 Design is very important for a piece of software, but there is no such talent in the project team, which may lead to a decline in product appeal and more time spent on interface development.
 
-##3.5 Project Close-out Plan
+## 3.5 Project Close-out Plan
 
 After the development is over, the team will invite some trial users and QA teams to test. This part of the user will not know the specifics of the requirements document and maximize the simulation of future users' use of the software. This part of the user will submit feedback to the in-group test docker to confirm whether the requirements document and test document need to be updated and update the project code. At the same time, a small number of people inside and outside the group will be invited to perform software testing based on the test documents to improve the stability and accuracy of the software. After the above tests are completed, write the software delivery documentation and supporting documentation and deliver them.
 
@@ -132,6 +132,23 @@ __Table: *Table 4 Inner Support*__
 |System Design|Kyrie|Software design document|Qualified system design based on requirements documentation|
 |Code Test|Touko|Code|Write project source code and unit test|
 |Software Delivery|Colorofnight|Delivery of documents and finished software|Final closing and writing a summary document|
+
+Document Writing
+- Requirement Analysis:	1st week
+- SRS:	2nd week
+- SPMP:	4th week
+- Final SRS confirmation:	6th week
+System Design
+- Summary design:	7th week
+- detailed design:	8th week
+- System design model determination:	10th week
+Code Test
+- Coding:	12th week
+- Testing:	12th week
+- Delivery Preparation:	13th week
+Software Delivery
+- System Delivery:	14th week
+- Summary:	15th week
 
 ## 5.2 Testing Plan
 
