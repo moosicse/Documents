@@ -133,20 +133,20 @@ __Table: *Table 4 Inner Support*__
 |Code Test|Touko|Code|Write project source code and unit test|
 |Software Delivery|Colorofnight|Delivery of documents and finished software|Final closing and writing a summary document|
 
-Document Writing
+1. Document Writing
 - Requirement Analysis:	1st week
 - SRS:	2nd week
 - SPMP:	4th week
 - Final SRS confirmation:	6th week
-System Design
+2. System Design
 - Summary design:	7th week
 - detailed design:	8th week
 - System design model determination:	10th week
-Code Test
+3. Code Test
 - Coding:	12th week
 - Testing:	12th week
 - Delivery Preparation:	13th week
-Software Delivery
+4. Software Delivery
 - System Delivery:	14th week
 - Summary:	15th week
 
