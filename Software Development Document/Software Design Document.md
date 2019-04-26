@@ -142,9 +142,15 @@ As mentioned above, the storage location of the music streaming media file can b
 
 #### Entry
 
-
+One of the biggest differences between our project and the traditional music player is that it will randomly play and filter the music according to the user's mood. This service will be activated when the user turns on the song according to the mood and performs music switching.
 
 #### Process
+
+In order to complete this set of services, we must first model the mood based on each song. We use the pre-trained neural network to judge the mood of the song according to the tune, rhythm, lyrics and other information of the song, and score the song in several mood dimensions and store it in the song information. The use of pre-trained neural networks is due to the problem of server performance. It is not possible to run a stressful model on the server. It is necessary to use additional computational power for model training.
+
+After the modeling is completed and the music mood score is given, we need to establish a mood transition state map of human maximum probability based on the existing research to provide services for the subsequent operations. The purpose of this is to recommend the most suitable music by the user's current mood, the ultimate goal is to keep the user in a better mood state. We consider a variety of ways to get user mood, such as face recognition, arm swing frequency, heart rate and so on. Considering the limitation of system calls, we currently only consider the way of face recognition to get the user's mood. Here again a new neural network is needed.
+
+The neural network is based on existing facial recognition methods and provides a multi-dimensional user facial expression scoring, such as happiness, sadness, anger, and the like. The model needs to be as lean as possible and able to judge the user's mood faster. In the business process, we first ask the user to agree to take the user's face image, then judge the user's mood, and finally recommend the song according to the recommendation method described above.
 
 # 5 Dependency Description
 
