@@ -158,11 +158,133 @@ Only important program dependencies will be introduced here.
 
 ## 5.1 Backend Dependency
 
+### 5.1.1 Python
+
+#### Website
+
+<https://www.python.org/>
+
+#### License
+
+<https://docs.python.org/3/license.html>
+
+### 5.1.2 Django
+
+#### Website
+
+<https://www.djangoproject.com/>
+
+#### Overview
+
+Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
+
+#### License
+
+<https://github.com/django/django/blob/master/LICENSE>
+
+### 5.1.3 Django Rest Framework
+
+#### Website
+
+<https://www.django-rest-framework.org/>
+
+#### Overview
+
+Django REST framework is a powerful and flexible toolkit for building Web APIs.
+
+#### License
+
+<https://www.django-rest-framework.org/#license>
+
 ## 5.2 Frontend Dependency
+
+### 5.2.1 JavaScript
+
+#### Website
+
+<https://www.javascript.com/>
+
+### 5.2.2 React
+
+#### Website
+
+<https://reactjs.org/>
+
+#### Overview
+
+A JavaScript library for building user interfaces.
+
+#### License
+
+MIT License
+
+<https://github.com/facebook/react/blob/master/LICENSE>
+
+### 5.2.3 MobX
+
+#### Website
+
+<https://mobx.js.org/>
+
+#### Overview
+
+MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
+
+#### License
+
+MIT License
+
+<https://github.com/mobxjs/mobx/blob/master/LICENSE>
+
+### 5.2.4 Ant Design
+
+#### Website
+
+<https://ant.design/>
+
+#### Overview
+
+A design system with values of Nature and Determinacy for better user experience of enterprise applications.
+
+#### License
+
+MIT License
+
+<https://github.com/ant-design/ant-design/blob/master/LICENSE>
 
 ## 5.3 Database Dependency
 
+### 5.3.1 SQLite3
+
+#### Website
+
+<https://www.sqlite.org/index.html>
+
+#### Overview
+
+SQLite is a C-language library that implements a [small](https://www.sqlite.org/footprint.html), [fast](https://www.sqlite.org/fasterthanfs.html), [self-contained](https://www.sqlite.org/selfcontained.html), [high-reliability](https://www.sqlite.org/hirely.html), [full-featured](https://www.sqlite.org/fullsql.html), SQL database engine. SQLite is the [most used](https://www.sqlite.org/mostdeployed.html) database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day.
+
+#### License
+
+<https://www.sqlite.org/copyright.html>
+
 ## 5.4 Automatic Build Dependency
+
+### 5.4.1 Ansible
+
+#### Website
+
+<https://www.ansible.com/>
+
+#### Overview
+
+Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications — automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+
+#### License
+
+GNU General Public License v3.0
+
+<https://github.com/ansible/ansible/blob/devel/COPYING>
 
 # 6 Interface and Service Description
 
