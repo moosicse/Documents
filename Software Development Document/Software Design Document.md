@@ -130,11 +130,21 @@ Here are a decomposition of several business processes that will be widely used.
 
 #### Entry
 
-#### Internal Process
+The most important function of the music player is to play music, so the music playing business will be the most frequent and most reliable business. The user may play music at any time, such as searching for a song and clicking on the search result, clicking on the song in the album, clicking on the song on the artist page, playing a song on the radio or song list, triggers the music playing music.
 
-#### External Process
+#### Process
 
-#### Export
+When the user initiates a song request, the program passes a music id. The program will find the corresponding song based on this id and return music information and binary streaming media files. After the browser receives the relevant information, it provides the user with browser-level music playback. 
+
+As mentioned above, the storage location of the music streaming media file can be arbitrary. In the case of initial service operations, music files can be placed in a public folder and stored in a database. Provide the interface to the user when the user needs it. If it is stored in the CDN, when the music is uploaded, the music file is directly transmitted to the CDN, and the resource address corresponding to the CDN is recorded. In this case, when the user acquires music, the program first confirms the user's authority on the music file. If the user is allowed to access the music file, the system will provide a temporary token to the user, allowing the user to obtain the streaming file directly from the CDN.
+
+### 4.2.2 Business Next Song With Mood Recognition
+
+#### Entry
+
+
+
+#### Process
 
 # 5 Dependency Description
 
