@@ -88,6 +88,8 @@ The backend currently uses the SQLite3 database. As a start-up project, the data
 
 ## 3.3 Source Code Architecture
 
+TODO: May discard.
+
 ### 3.3.1 Frontend Source Code Architecture
 
 ### 3.3.2 Backend Source Code Architecture
