@@ -88,6 +88,10 @@ The backend currently uses the SQLite3 database. As a start-up project, the data
 
 ## 3.3 Source Code Architecture
 
+### 3.3.1 Frontend Source Code Architecture
+
+### 3.3.2 Backend Source Code Architecture
+
 # 4. Decomposition Description 
 
 ## 4.1 Module Decomposition 
@@ -108,6 +112,16 @@ TODO: Finish this hash tag link.
 
 ### 4.1.2 Module User
 
+#### Overview
+
+The Module User is used to store all user-related information, including user attributes, permissions, and so on. The Module User has a one-to-one correspondence with the users provided by Django's own Authentication module, which facilitates user login and session permission control.
+
+#### Scope
+
+The Module User stores user-related information. Whether the user is a Staff or Super Administrator is set and executed by the Django Authentication module. Some songs require permission control, and the Module User can set a permission group Model separately. When the song needs permission control, the user is added to the permission group, and the song is set to the permission, so that the authority can control the song. Doing so allows users to privately upload songs or share songs in small circles.
+
+User preferences and recent mood information will also be stored in the Module User. This allows the program to better push songs or filter songs for the user, allowing the program to do smarter things.
+
 ## 4.2 Business Process Decomposition
 
 Here are a decomposition of several business processes that will be widely used. 
@@ -123,6 +137,8 @@ Here are a decomposition of several business processes that will be widely used.
 #### Export
 
 # 5 Dependency Description
+
+Only important program dependencies will be introduced here.
 
 ## 5.1 Backend Dependency
 
