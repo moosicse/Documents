@@ -4,9 +4,16 @@ __Project Moosic__
 
 Author: Touko, JeremyCJM, Colorofnight, ZZX
 
-__Version__
+__Version Control__
 
+| Version | Date       | Participant | Description                             |
+| ------- | ---------- | ----------- | --------------------------------------- |
+| 1       | 2019-04-28 | Touko       | Initialize the Software Design Document |
+|         |            |             |                                         |
 
+__GitHub Repository__
+
+<https://github.com/moosicse/>
 
 # 1. Introduction
 
