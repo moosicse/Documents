@@ -121,8 +121,6 @@ Module Music mainly stores music-related data in a narrow range, such as the son
 
 Module Music contains one of the most significant service of this project - mood recognition service. Although the mood recognition module is not a separate module, it needs to be a separate service and belongs to the Module Music. To get a brief description and detailed design information, please refer to the [7.3 Service Detailed Design](#7.3 Service Detailed Design).    
 
-TODO: Finish this hash tag link. 
-
 ### 4.1.2 Module User
 
 #### Overview
@@ -321,7 +319,21 @@ TODO: JeremyCJM
 
 ### 7.1.1 Module Music
 
-#### Module Permission Control
+#### Model Design
+
+The model that should be included in the Module music has songs, albums, singers, and genres. The main body is songs, albums, singers and genres are connected by foreign keys and songs. The information contained in the song mainly includes song name, song file name, genre, mood information, and the like. The album mainly includes album names, participating singers, album profiles and other information. The singer mainly includes information such as the name of the singer The genre simply includes genre name information.
+
+Permission Control:
+
+The music module is read-only for ordinary users with permissions and readable and writable for staff and administrators. An anonymous user who is not logged in also belongs to a class of users who have ordinary user rights, and the corresponding rights are specified by the user group.
+
+### 7.1.2 Module User
+
+#### Model Design
+
+The Module User mainly contains two models of user and user group. The user model mainly stores user-related information, and the user group is used to group users and classify user permissions.
+
+For example, if the song M is a song that requires permission to access, and only the user of the user group G is allowed to access. As an administrator, first add the user to the user group, then set the user group's access to the song, and set the song to require access. Thus, when an unprivileged user accesses the song, the access action is restricted. When a user in the G user group accesses the song M, the user can access the song M due to permission.
 
 ## 7.2 Interface Detailed Design
 
