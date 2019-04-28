@@ -2,7 +2,11 @@
 
 __Project Moosic__
 
-Author: Touko
+Author: Touko, JeremyCJM, Colorofnight, ZZX
+
+__Version__
+
+
 
 # 1. Introduction
 
@@ -292,9 +296,17 @@ GNU General Public License v3.0
 
 ## 6.1 User Interface Description
 
-## 6.2 Internal Interface Description
+The program is mainly composed of three interfaces: music player interface, user personal information interface and song management interface. Among them, the staff or users who upload songs themselves can access the song management interface, and most ordinary users only provide the rights of the music playing interface and the personal information interface.
 
-## 6.3 Service Description
+The User Interface of the program is as close as possible to the SPA (Single-page application). This provides a complete immersive music playback experience and is in line with our original intention to design this app – providing a lightweight music player for music lovers.
+
+As for the functions of music search, song information viewing, album viewing, etc, it will be designed in the form of a pop-up window. The main body of the music player is a play console. When the user needs to call up the album interface, the interface will pop up from the edge.
+
+## 6.2 Service Description
+
+The most important services of the program are mood recognition services and song emotional judgment recommendation services.
+
+TODO: JeremyCJM
 
 # 7 Detailed Design
 
