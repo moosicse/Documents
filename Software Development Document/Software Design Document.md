@@ -8,8 +8,9 @@ __Version Control__
 
 | Version | Date       | Participant | Description                             |
 | ------- | ---------- | ----------- | --------------------------------------- |
-| 1       | 2019-04-28 | Touko       | Initialize the Software Design Document |
-| 2       | 2019-04-29 | JeremyCJM   | Updated the 7.3 part                    |
+| 0.1     | 2019-04-28 | Touko       | Initialize the Software Design Document |
+| 0.2     | 2019-04-29 | JeremyCJM   | Updated the 7.3 part                    |
+| 1       | 2019-05-03 | Touko       | Version Alpha                           |
 
 __GitHub Repository__
 
@@ -96,14 +97,6 @@ To get a compact and scalable structure, we use Nginx as the web server program.
 The backend provides API services to frontend web pages through Nginx's reverse proxy. The backend is also divided into modules. The module takes Model as the core and provides API through Views and Services in the Controller layer. At the same time, parts such as event triggers, global constants, and timing parallel tasks may exist in the module at the same time. The module was previously associated with the global settings file, using Django's own routing for access control between different APIs.
 
 The backend currently uses the SQLite3 database. As a start-up project, the database pressure is not large, so there is no need to use a commercial high-concurrency high-stress database. The program's music files are allowed to be stored in multiple sources. The current server, third-party storage repository or CDN can be used as the storage location for static music files. The cache uses the native memory cache. It is expected that the larger cache will not be used at present, and there is no need to worry about cache hot swap.
-
-## 3.3 Source Code Architecture
-
-TODO: May discard.
-
-### 3.3.1 Frontend Source Code Architecture
-
-### 3.3.2 Backend Source Code Architecture
 
 # 4. Decomposition Description 
 
