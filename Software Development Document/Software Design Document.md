@@ -9,7 +9,7 @@ __Version Control__
 | Version | Date       | Participant | Description                             |
 | ------- | ---------- | ----------- | --------------------------------------- |
 | 1       | 2019-04-28 | Touko       | Initialize the Software Design Document |
-|         |            |             |                                         |
+| 2       | 2019-04-29 | JeremyCJM   | Updated the 7.3 part                    |
 
 __GitHub Repository__
 
@@ -347,4 +347,34 @@ Song management interface allows users to adjust the place of uploaded music pie
 
 ## 7.3 Service Detailed Design
 
-TODO: JeremyCJM
+### 7.3.1 Facial Mood Recognition
+
+This service takes user's facial photo as input and output user's mood. Emotive analytics is an interesting blend of psychology and technology. Though arguably reductive, many facial expression detection tools lump human emotion into 7 main categories: Joy, Sadness, Anger, Fear, Surprise, Contempt, and Disgust. With facial emotion detection, algorithms detect faces within a photo, and sense micro expressions by analyzing the relationship between points on the face, based on curated databases compiled in academic environments. The most popular and precise models are neural networks. We might choose one of the facial mood recognition API mentioned here (https://nordicapis.com/20-emotion-recognition-apis-that-will-leave-you-impressed-and-concerned/) as our facial mood recognition service.
+
+### 7.3.2 Musical Emotion Classification
+
+This service takes music (including audio and lyrics) as input, and output the emotion of the music. The recognition of musical mood is not as mature as that of facial mood. There is a state-of-the-art research combining lyrics (sentiment analysis in NLP) with audio (CNN) to get a bimodal neural network to classify the emotion of music (https://arxiv.org/abs/1809.07276). For pure music without lyrics, we only use audio neural network to do the classification. We will try to implement this neural network from scratch to fulfill the requirement of this service. We will also consider using this repo on github (https://github.com/danz1ka19/Music-Emotion-Recognition) as reference.
+
+### 7.3.3 Recommend Next Music According to Facial Mood
+
+The mapping from the facial mood to musical emotion is as following:
+
+| facial mood | musical emotion |
+| :---------: | :-------------: |
+|     Joy     | Happy, Excited  |
+|   Sadness   |    Sad, Calm    |
+|    Anger    |      Calm       |
+|  Surprise   |     Excited     |
+
+
+
+
+
+
+
+
+
+
+
+
+
