@@ -310,11 +310,9 @@ Song emotions are basically judged from waveforms of music. While calm music usu
 
 We may implement the algorithms ourselves, or using APIs directly.
 
-# 7 Detailed Design
+# 7 Module Detailed Design
 
-## 7.1 Module Detailed Design
-
-### 7.1.1 Module Music
+## 7.1 Module Music
 
 The model that should be included in the Module music has songs, albums, singers, and genres. The main body is songs, albums, singers and genres are connected by foreign keys and songs. The information contained in the song mainly includes song name, song file name, genre, mood information, and the like. The album mainly includes album names, participating singers, album profiles and other information. The singer mainly includes information such as the name of the singer The genre simply includes genre name information.
 
@@ -322,7 +320,57 @@ Permission Control:
 
 The music module is read-only for ordinary users with permissions and readable and writable for staff and administrators. An anonymous user who is not logged in also belongs to a class of users who have ordinary user rights, and the corresponding rights are specified by the user group.
 
-### 7.1.2 Module User
+### 7.1.1 Model
+
+All music related models will be specified here.
+
+#### Song
+
+| Name        | Type                | Default  | Null  | Unique | Notes                         |
+| ----------- | ------------------- | -------- | ----- | ------ | ----------------------------- |
+| id          | Int                 | Auto add | False | True   | Primary Key                   |
+| name        | Char(20)            | \        | False | False  | Music's name                  |
+| singer      | Foreign(Singer)     | \        | True  | False  |                               |
+| album       | Foreign(Album)      | \        | True  | False  |                               |
+| genres      | Foreigns(Genre)     | \        | True  | False  |                               |
+| mood        | Dict                | \        | True  | False  |                               |
+| user_group  | Foreigns(UserGroup) | \        | True  | False  | Users who can access          |
+| location    | Char(255)           | \        | False | True   | File path of the song's file. |
+| description | TextField           | \        | True  | False  |                               |
+
+#### Singer
+
+| Name        | Type      | Default  | Null  | Unique | Notes       |
+| ----------- | --------- | -------- | ----- | ------ | ----------- |
+| id          | Int       | Auto add | False | True   | Primary Key |
+| name        | Char(20)  | \        | False | False  |             |
+| gender      | Int       | \        | True  | False  |             |
+| birthday    | DateField | \        | True  | False  |             |
+| country     | Char(20)  | \        | True  | False  |             |
+| description | TextField | \        | True  | False  |             |
+
+#### Album
+
+| Name           | Type             | Default  | Null  | Unique | Notes       |
+| -------------- | ---------------- | -------- | ----- | ------ | ----------- |
+| id             | Int              | Auto add | False | True   | Primary Key |
+| name           | Char(20)         | \        | False | False  |             |
+| singer         | Foreigns(Singer) | \        | True  | False  |             |
+| published_date | DateField        | \        | True  | False  |             |
+| description    | TextField        | \        | True  | False  |             |
+
+#### Genre
+
+| Name | Type     | Default  | Null  | Unique | Notes       |
+| ---- | -------- | -------- | ----- | ------ | ----------- |
+| id   | Int      | Auto add | False | True   | Primary Key |
+| name | Char(20) | \        | False | True   |             |
+
+### 7.1.2 Rest Client
+
+### 7.1.3 Services
+
+## 7.2 Module User
 
 The Module User mainly contains two models of user and user group. The user model mainly stores user-related information, and the user group is used to group users and classify user permissions.
 
@@ -330,13 +378,11 @@ For example, if the song M is a song that requires permission to access, and onl
 
 Music information is available to all users, while moods are users' privacy and are visible only to the system. 
 
-## 7.2 Interface Detailed Design
+### 7.2.1 Model
 
-Music player interface is like that of mainstream music apps like NetEase and QQMusic. Basic interactions such as starting or pausing a song/playlist, selecting similar music, music searching, song information viewing, album viewing are available to users in the form of either SPA or pop-up windows
+### 7.2.2 Rest Client
 
-User personal information interface allows users to view and change their gender, username, birthday, etc.
-
-Song management interface allows users to adjust the place of uploaded music piece in the playlist as well as perform other music management operations.  
+### 7.2.3 Services
 
 ## 7.3 Service Detailed Design
 
