@@ -73,6 +73,20 @@ We first deprecated the way Django's own Template rendering methods and complete
 Second, in the MVC architecture, the Controller is the part we need most unit testing. We have defined the development plan for unit testing. Considering that the Part Model has a very low failure rate due to the commonly used framework, there is no need to write unit tests. Due to the particularity of the browser's work, the Part View must ensure that its code logic is reliable, and most of the problems that arise are Part Controller's problems, and there is no need for unit testing. Unit testing is very important in the controller that connects the above.
 Therefore, we divide the Controller into two parts, one is the Views part of the Django framework, and the other is the Services section we specify. Views provides backend rendering in the original Django framework. But in this project, the Views section will focus on the packaging of the API. Thanks to the good interface and reliable packaging provided by Django-Rest-Framework, Views can be efficiently designed as CURD. But why do we have to be a separate service? Considering the coupling of the code and the possible reuse, it is a wise choice to separate some of the general logic or complex logic into Services. This design can provide a better Debug environment for subsequent development.
 
+### 3.1.3 Diagram Explanation
+
+#### Overall Design and Dataflow
+
+![internal_architecture](.\pic\sdd\internal_architecture.jpg)
+
+You can see from the above figure (Internal Architecture) how the MVC architecture works in general and data flow. As mentioned above, View is responsible for rendering the interface. The View receives data from the Controller and renders it to the user. The Controller is responsible for data processing and can be subdivided into two parts: Rest Client and Service. In these two parts, the Rest Client part is closer to the View part, and the Service and Model parts are closer. View only interacts with the Rest Client, and the Rest Client and Service allow data interaction with the Model layer. The Model layer is the abstract expression and highly encapsulated database, and provides the object-oriented access interface of the database by means of ORM.
+
+#### Controller Internal Design
+
+#### Models Internal Design
+
+#### Views Internal Design
+
 ## 3.2 External Architecture
 
 ### 3.1.1 Brief Introduction
