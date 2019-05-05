@@ -201,11 +201,11 @@ In fact, the View layer and the other two layers use different code repositories
 
 ## 3.2 External Architecture
 
-### 3.1.1 Brief Introduction
+### 3.2.1 Brief Introduction
 
 As mentioned above, we will use a separate architecture at the frontend and backend, with the connection of database located at the side of backend. A more detailed description of the external architecture of this program is provided below.
 
-### 3.1.2 Design Concept
+### 3.2.2 Design Concept
 
 The program will be divided into frontend and backend for development. The frontend and backend are each placed in different code repositories, using different languages but sharing the same set of APIs and data structures. 
 
