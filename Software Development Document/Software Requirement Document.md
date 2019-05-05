@@ -101,7 +101,7 @@ Utlize sentiment analysis techniques in NLP to get the emotion of lyrics.  Using
 3. Risks  
 The recognition of music emotion is not mature. We might not able to realize the function on time.
 
-4. **Alternative Requirement**
+4. **Alternative Requirement**  
 If the music emotion recognition function can not be realized on time, we will use this alternative requirement: 
 Give each music in our database a emotional label by hand.  
 We could also use spider program to get the playlists that have emotional words in its title (e.g. *Songs to listen when sad*) on Netease Music, then label the music in this playlists corresponding emotion.
