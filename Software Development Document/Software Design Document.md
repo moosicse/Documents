@@ -364,6 +364,10 @@ We may implement the algorithms ourselves, or using APIs directly.
 
 # 7 Module Detailed Design
 
+**Note**: Since the Rest Framework already encapsulates a complete set of CURD data interfaces, we don't have to code for simple data reads and writes. For example, we can get song information directly under the conditions allowed by the Permission Control module.
+
+**Only some examples of interfaces are listed here. Other interfaces will be designed according to business processes. The template are the same as the examples here.**
+
 ## 7.1 Module Music
 
 The model that should be included in the Module music has songs, albums, singers, and genres. The main body is songs, albums, singers and genres are connected by foreign keys and songs. The information contained in the song mainly includes song name, song file name, genre, mood information, and the like. The album mainly includes album names, participating singers, album profiles and other information. The singer mainly includes information such as the name of the singer The genre simply includes genre name information.
@@ -418,9 +422,74 @@ All music related models will be specified here.
 | id   | Int      | Auto add | False | True   | Primary Key |
 | name | Char(20) | \        | False | True   |             |
 
+#### Playlist
+
+| Name  | Type           | Default  | Null  | Unique | Notes       |
+| ----- | -------------- | -------- | ----- | ------ | ----------- |
+| id    | Int            | Auto add | False | True   | Primary Key |
+| songs | Foreigns(Song) | \        | True  | False  |             |
+
 ### 7.1.2 Rest Client
 
+#### Upload song
+
+**URL** 
+
+/api/song/upload/
+
+**Method** 
+
+POST
+
+**Interface**
+
+| IO     | name      | type        | Notes  |
+| ------ | --------- | ----------- | ------ |
+| Input  | song_id   | Int         |        |
+| Input  | song file | Byte stream |        |
+| Input  | singer_id | Int         | Option |
+| Input  | album_id  | Int         | Option |
+| Output | \         | \           |        |
+
+**Algorithm**
+
+Add a song to the cloud storage. If upload succeed, return status code 200, else status code 403.
+
 ### 7.1.3 Services
+
+#### Upload song
+
+**Interface**
+
+| IO     | name      | type        | Notes         |
+| ------ | --------- | ----------- | ------------- |
+| Input  | song_id   | Int         |               |
+| Input  | song file | Byte stream |               |
+| Input  | singer_id | Int         | Option        |
+| Input  | album_id  | Int         | Option        |
+| Output | \         | Bool        | Upload result |
+
+**Algorithm**
+
+Firstly, create a song object based on the information provided above. Then de-serialize the song file's byte stream and store it at proper location.
+
+#### Add a song to playlist
+
+**Interface**
+
+| IO     | name        | type | Notes      |
+| ------ | ----------- | ---- | ---------- |
+| Input  | song_id     | Int  |            |
+| Input  | playlist_id | Int  |            |
+| Output | \           | Bool | Add result |
+
+**Algorithm**
+
+Find the playlist by playlist_id, then add the song to the playlist.
+
+#### Remove a song from playlist
+
+Same as Add a song to playlist, no details.
 
 ## 7.2 Module User
 
@@ -432,9 +501,104 @@ Music information is available to all users, while moods are users' privacy and 
 
 ### 7.2.1 Model
 
+#### User Profile
+
+| Name         | Type            | Default  | Null  | Unique | Notes               |
+| ------------ | --------------- | -------- | ----- | ------ | ------------------- |
+| id           | int             | Auto add | False | True   | Primary Key         |
+| user         | Foreign(User)   | \        | False | True   | Django provide user |
+| name         | Char(20)        | \        | Fasle | True   |                     |
+| motto        | TextField       | \        | True  | False  |                     |
+| prefer_genre | Foreigns(Genre) | \        | True  | False  |                     |
+
+#### User Group
+
+| Name | Type                  | Default  | Null  | Unique | Notes       |
+| ---- | --------------------- | -------- | ----- | ------ | ----------- |
+| id   | Int                   | Auto add | False | True   | Primary Key |
+| name | Char(20)              | \        | False | True   |             |
+| user | Foreigns(UserProfile) | \        | True  | False  |             |
+
 ### 7.2.2 Rest Client
 
+#### User Register
+
+**URL** 
+
+/api/register
+
+**Method** 
+
+POST
+
+**Interface**
+
+| IO     | name     | type     | Notes            |
+| ------ | -------- | -------- | ---------------- |
+| Input  | username | Char(20) |                  |
+| Input  | E-mail   | Email    |                  |
+| Input  | password | Char(20) |                  |
+| Output | \        | JSON     | User information |
+
+**Algorithm**
+
+Create a Django user and bind the User Profile.
+
+#### User Login
+
+**URL** 
+
+/api/login
+
+**Method** 
+
+POST
+
+**Interface**
+
+| IO     | name     | type     | Notes                            |
+| ------ | -------- | -------- | -------------------------------- |
+| Input  | username | Char(20) |                                  |
+| Input  | password | Char(20) |                                  |
+| Output | \        | JSON     | User information and user login. |
+
+**Algorithm**
+
+Check user info by django's built-in function and login or return status=403 when the username and password not match.
+
+#### User Logout
+
+**URL** 
+
+/api/logout
+
+**Method** 
+
+POST, GET
+
+**Interface**
+
+No I/O.
+
+**Algorithm**
+
+Logout user.
+
 ### 7.2.3 Services
+
+#### User have access to the song
+
+**Interface**
+
+| IO     | name | type        | Notes |
+| ------ | ---- | ----------- | ----- |
+| Input  | song | Song        |       |
+| Input  | user | UserProfile |       |
+| Output | \    | Bool        |       |
+
+**Algorithm**
+
+The program will check if the song has user group field and check that if the user is in the specific user group. If in, return True, otherwise False. If the song has no user group, default that it is public.
 
 ## 7.3 Service Detailed Design
 
