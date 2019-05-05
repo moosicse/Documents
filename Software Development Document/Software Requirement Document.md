@@ -10,6 +10,7 @@ __Version Control__
 | ------- | ---------- | ------------ | ------------------------------------------------- |
 | 0.1     | 2019-04-20 | Colorofnight | Initialize the Software Requirement Specification |
 | 0.2     | 2019-05-04 | JeremyCJM    | Updated the Software Requirement Specification    |
+| 1.0     | 2019-05-05 | Colorofnight | Version Alpha                                     |
 
 # 1. Introduction
 
@@ -49,7 +50,7 @@ Most music platforms are lacking mood-based recommendation functions.
 
 ## 2.5 User Objectives
 
-The user objective is to recommend music to users based on their moods when using the platform. We need to judge users’ emotion based on their facial expression when logging in and match their moods with the music of different styles. We do not have to implement the facial mood recognition neural network from scratch, because there are already many matrue API and code on Internet.
+The user objective is to recommend music to users based on their moods when using the platform. We need to judge users’ emotion based on their facial expression when logging in and match their moods with the music of different styles. *We do not have to implement the facial mood recognition neural network from scratch, because there are already many mature API and code on Internet.*
 
 ## 2.6 General Constraints
 
@@ -57,7 +58,11 @@ The largest constraints placed on this project is time and format. Our developer
  
 # 3. Functional Requirements  
 
-## 3.1 Privacy protection
+The simplified state diagram of the system is shown in Figure 3.1 below. Privacy protection is required at Login Interface and after Login. After calling the camera, Mood recognition is required at the state Mood Detector. At state Playlist Generator, generating playlist according to mood requires Music classification.
+![](pic/State_diagram.png)
+__Figure 3.1 Simplified State Diagram__
+
+## 3.1 Privacy Protection
 
 The website shall prevent any people other than the user from accessing his/her music list through password protection.
 
@@ -70,7 +75,7 @@ The login accounts are created in a SQL database that must be created separately
 3. Risks
 User accounts can be compromised by lost or misplaced passwords that could inherently lead to misinformation. Accounts can be given a new password or deactivated through the SQL administration.
 
-## 3.2 Mood recognition
+## 3.2 Mood Recognition
 
 The platform should be able to judge users’ moods by photos taken when user enter into the song recommendation page.
 
@@ -83,45 +88,53 @@ The function is achieved with computer vision techniques.
 3. Risks
 Inaccurate judgement can affect user experience.
 
-## 3.3 Music emotion recognition
+## 3.3 Music Emotion Recognition
 
 The system should be able to recognize the emotion of music.
 
 1. Description
-Taking the music and its lyrics (if exists) as input, the music emotion recognition system should output the emption of this music.
+  Taking the music and its lyrics (if exists) as input, the music emotion recognition system should output the emotion of this music.
 
 2. Technical issues
-Utlize sentiment analysis techniques in NLP to get the emotion of lyrics.  Using deep learning to recognize the emotion from audiowave graph.
+  Utlize sentiment analysis techniques in NLP to get the emotion of lyrics.  Using deep learning to recognize the emotion from audio wave graph.
 
 3. Risks
   The recognition of music emotion is not mature. We might not able to realize the function on time.
 
 4. **Alternative Requirement**
-
-  If the music emotiton recognition function can not be realized on time, we will using this alternative requirement: 
-
-  Give each music in our database a emotional label by hand.
-
-  We could also using spider program to get the playlists that have emotional words in its title (e.g. *Songs to listen when sad* ) on NetEase Music, then label the music in this playlists corresponding emotion.
-
+  If the music emotion recognition function can not be realized on time, we will use this alternative requirement: 
+Give each music in our database a emotional label by hand.
+  We could also use spider program to get the playlists that have emotional words in its title (e.g. *Songs to listen when sad*) on Netease Music, then label the music in this playlists corresponding emotion.
   
 
-## 3.4 Music player
+## 3.4 Music Player
 
 The basic functions that the music player needs, which include play, pause, resume, play next, random play, volume adjust, etc.
 
-## 3.5 Music recommendation
+## 3.5 Music Recommendation
 
 According to the mood of the user obtained by the mood recognition, combined with the music classification, recommend the music suitable for the user to listen to at this time.
 
-## 3.6 Music management
+## 3.6 Music Management
 
 Users can manage their own music, including uploading, downloading and deleting, and can set the music as a favorite, create a song list and add songs to the song list.
 
-## 3.7 Music community
+## 3.7 Music Community
 
 Users can post their own comments under each song and share song links to their like-minded friends.
  
+## 3.8 Use Case Model
+
+The top use case is shown in Figure 3.2, and the sub use cases for admin, staff and user & visitor is shown respectively in Figure 3.3, Figure 3.4 and Figure 3.5
+![](pic/Top_use_case.png)
+__Figure 3.2 Top Use Case__
+![](pic/Sub_use_case1.png)
+__Figure 3.3 Staff Use Case__
+![](pic/Sub_use_case2.png)
+__Figure 3.4 Admin Use Case__
+![](pic/Sub_use_case3.png)
+__Figure 3.5 User & Visitor Use Case__
+ 
 
 # 4. Interface Requirements
 
@@ -132,9 +145,10 @@ User interaction is largely graphical based using principles from perceptual hum
 ### 4.1.1 GUI
 
 The GUI is based on a website,and the design is made a reference to the Netease Cloud Music[1] and QQ music[2] on website.
-The preliminary design style of the user interface is shown in the figure 1 below.
+The preliminary design style of the user interface is shown in the Figure 4.1 below.
 
 ![](pic/Interface_style.png)
+__Figure 4.1 Preliminary Interface Design__
 
 ### 4.1.2 API
 
