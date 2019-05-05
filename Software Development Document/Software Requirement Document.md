@@ -66,15 +66,15 @@ __Figure 3.1 Simplified State Diagram__
 
 The website shall prevent any people other than the user from accessing his/her music list through password protection.
 
-1. Description
+1. Description  
 
   Before being allowed access into her music warehouse, the user must first provide a valid username and password.
 
-2. Technical issues
+2. Technical issues  
 
   The login accounts are created in a SQL database that must be created separately. Input: username and password.
 
-3. Risks
+3. Risks  
 
   User accounts can be compromised by lost or misplaced passwords that could inherently lead to misinformation. Accounts can be given a new password or deactivated through the SQL administration.
 
@@ -82,15 +82,15 @@ The website shall prevent any people other than the user from accessing his/her 
 
 The platform should be able to judge users’ moods by photos taken when user enter into the song recommendation page.
 
-1. Description
+1. Description  
 
   Before music recommendation, the system calls the camera to acquire the facial expression of the user, and then calls the mood recognition API according to the facial expression to determine the current mood of the user.
 
-2. Technical issues
+2. Technical issues  
 
   The function is achieved with computer vision techniques.
 
-3. Risks
+3. Risks  
 
   Inaccurate judgement can affect user experience.
 
@@ -98,15 +98,15 @@ The platform should be able to judge users’ moods by photos taken when user en
 
 The system should be able to recognize the emotion of music.
 
-1. Description
+1. Description  
 
   Taking the music and its lyrics (if exists) as input, the music emotion recognition system should output the emotion of this music.
 
-2. Technical issues
+2. Technical issues  
 
   Utlize sentiment analysis techniques in NLP to get the emotion of lyrics.  Using deep learning to recognize the emotion from audio wave graph.
 
-3. Risks
+3. Risks  
 
   The recognition of music emotion is not mature. We might not able to realize the function on time.
 
