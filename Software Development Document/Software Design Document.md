@@ -30,12 +30,25 @@ This document defines the design portion of the software. The document includes 
 
 ## 1.3 Definition and Acronyms 
 
-No content yet.
+### 1.3.1 HTTP Status Code
+
+### 1.3.2 Special Noun
+
+- CURD
+
+  In computer programming, create, read, update, and delete (CRUD) are the four basic functions of persistent storage. Alternate words are sometimes used when defining the four basic functions of CRUD, such as retrieve instead of read, modify instead of update, or destroy instead of delete. CRUD is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information; often using computer-based forms and reports. 
+
+- REST
+
+  REST is acronym for REpresentational State Transfer. It is architectural style for distributed hypermedia systems and was first presented by Roy Fielding in 2000 in his famous dissertation.
+
+- 
 
 # 2. References 
 
 - Django - <https://docs.djangoproject.com/en/2.2/>
-- Django Rest Framework <https://www.django-rest-framework.org/>
+- Django Rest Framework - <https://www.django-rest-framework.org/>
+- Representational State Transfer (REST) - <https://restfulapi.net/>
 - React - <https://reactjs.org/>
 - Mobx - <https://mobx.js.org/>
 - Ant Design - <https://ant.design/>
@@ -79,13 +92,38 @@ Therefore, we divide the Controller into two parts, one is the Views part of the
 
 ![internal_architecture](.\pic\sdd\internal_architecture.jpg)
 
-You can see from the above figure (Internal Architecture) how the MVC architecture works in general and data flow. As mentioned above, View is responsible for rendering the interface. The View receives data from the Controller and renders it to the user. The Controller is responsible for data processing and can be subdivided into two parts: Rest Client and Service. In these two parts, the Rest Client part is closer to the View part, and the Service and Model parts are closer. View only interacts with the Rest Client, and the Rest Client and Service allow data interaction with the Model layer. The Model layer is the abstract expression and highly encapsulated database, and provides the object-oriented access interface of the database by means of ORM.
+You can see from the above figure [Internal Architecture] how the MVC architecture works in general and data flow. As mentioned above, View is responsible for rendering the interface. The View receives data from the Controller and renders it to the user. The Controller is responsible for data processing and can be subdivided into two parts: Rest Client and Service. In these two parts, the Rest Client part is closer to the View part, and the Service and Model parts are closer. View only interacts with the Rest Client, and the Rest Client and Service allow data interaction with the Model layer. The Model layer is the abstract expression and highly encapsulated database, and provides the object-oriented access interface of the database by means of ORM.
 
 #### Controller Internal Design
 
+The Controller layer is subdivided into two parts - the Rest Client and the Service layer. The Rest Client layer is close to the View, when the Service layer is close to the Model. The Rest Client layer, as its name implies, mainly performs tasks that encapsulate the API that conforms to the Rest standards, and handles some simple CURD operations, as well as permission control. The Service layer is a collection of frequently used, highly encapsulated APIs. Some algorithms with large computational complexity and complex logic are also encapsulated at this layer.
+
+![internal_architecture_controller](.\pic\sdd\internal_architecture_controller.jpg)
+
+The figure [Internal Architecture: Controllers] is an abstract architecture diagram of the Controller, where the vertical is divided into Module and the horizontal is divided into software architecture layers. Different Service will be divided according to different Modules, and the location where the Service code is placed is the location of the Model that is mainly responsible for it. Different Clients will also be divided according to the Module. The Service layer and the Rest Client layer in each Module form the Controller layer of the Module.
+The main function of the Rest Client layer is to encapsulate the CURD interface, aggregate the Service function, and encapsulate the API that conforms to the Rest standard to the front end. Unlike the traditional MVC architecture, users do not have direct access to the input interfaces of the Rest Client package. Requests made by users to these interfaces will be proxy accessed by the front end. For questions related to the Rest standard, please refer to [2.References].
+The functions provided by the Rest layer from top to bottom are paging module (optional), serialization module, user permission control module, Query Set and View Set encapsulation module. In the program, there will be a separately designed Permission Control module to judge the user rights. The serialization module and the paging module will also be designed independently to meet the low coupling degree of the software.
+
+The Service layer encapsulates code blocks that satisfy the following conditions: reusable, or logically complex, or some of the most widely used database operations. For example, in our Mood Recognition module, song sentiment analysis can be packaged as a stand-alone Service, while face emotion analysis can also be used as a separate service package. When Rest Client is working, it can selectively call different services according to their own functions and combine their functions.
+
 #### Models Internal Design
 
+![internal_architecture_model](.\pic\sdd\internal_architecture_model.jpg)
+
+We use a relational database as the database used by the data storage module. The database and ORM encapsulation layer are broadly defined as the Model layer. In the diagram above [Internal Architecture: Models], we can see how the database and the ORM package module work. In actual programming, we only need to consider how the content in the database is stored. Referring to the data sheet located below the figure, the parts we need to consider are
+
+- name - the name of the query's column
+- type - the type of the query's column
+- default - the default value of the query's column
+- null - whether the column allow null
+- unique - whether the column requires unique
+- notes - other precautions
+
 #### Views Internal Design
+
+![internal_architecture_view](.\pic\sdd\internal_architecture_view.jpg)
+
+In fact, the View layer and the other two layers use different code repositories that run in different environments. The View layer and the Controller layer communicate using an API that conforms to the Rest standard. Referring to the figure above [Internal Architecture: Views], when the user accesses the page, the HTTP packet is first received by the page Router and analyzes the URI condition, and different pages are rendered according to different URIs. The page is first divided into Layout design, which includes Header, Footer, Nav Sider and the main Content section. The Content part is the entry of the Container, and each Container consists of several Components. The data interaction is all done by the Store, and the Less is used as the front-end style rendering module.
 
 ## 3.2 External Architecture
 
