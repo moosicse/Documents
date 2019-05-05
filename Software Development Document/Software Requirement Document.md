@@ -59,6 +59,7 @@ The largest constraints placed on this project is time and format. Our developer
 # 3. Functional Requirements  
 
 The simplified state diagram of the system is shown in Figure 3.1 below. Privacy protection is required at Login Interface and after Login. After calling the camera, Mood recognition is required at the state Mood Detector. At state Playlist Generator, generating playlist according to mood requires Music classification.  
+
 __Figure 3.1 Simplified State Diagram__
 ![](pic/State_diagram.png)
 
@@ -126,6 +127,7 @@ Users can post their own comments under each song and share song links to their 
 ## 3.8 Use Case Model
 
 The top use case is shown in Figure 3.2, and the sub use cases for admin, staff and user & visitor is shown respectively in Figure 3.3, Figure 3.4 and Figure 3.5  
+
 __Figure 3.2 Top Use Case__
 ![](pic/Top_use_case.png)
 
@@ -148,6 +150,7 @@ User interaction is largely graphical based using principles from perceptual hum
 
 The GUI is based on a website,and the design is made a reference to the Netease Cloud Music[1] and QQ music[2] on website.
 The preliminary design style of the user interface is shown in the Figure 4.1 below.  
+
 __Figure 4.1 Preliminary Interface Design__
 ![](pic/Interface_style.png)
 
