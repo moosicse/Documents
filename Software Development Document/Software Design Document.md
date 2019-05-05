@@ -690,11 +690,27 @@ The mapping from the facial mood to musical emotion is as following:
 |    Anger    |      Calm       |
 |  Surprise   |     Excited     |
 
+# 8 Exception Handling
 
+## 8.1 Software Exception Handling
 
+### 8.1.1 Backend Exception
 
+All backend exceptions are presented as HTTP status codes. For information about HTTP status codes, see [1.3.1 HTTP Status Code](#1.3.1 HTTP Status Code). For example, when a user requests a song that does not exist, the program will return a 404 Not Found error because the song could not be found. At this point, the front end can analyze the returned data packet and feed back the result to the user.
 
+### 8.1.2 Frontend Exception
 
+The frontend will encapsulate all requests, perform a unified processing of some HTTP error codes, and handle other HTTP errors that may occur at runtime in the Store. For example, the front end will directly encapsulate the 401 Unauthorized Request. When this error occurs, the user is directed to log in to the system.
+
+## 8.2 Disaster tolerance (Optional)
+
+This part of the functionality is optional considering the complexity of the project and the development cycle.
+
+Since we are using SQLite3, there is no need to consider the remote disaster recovery of the database. We only need to consider a regular mirror backup of the server running the program to prevent data loss problems caused by downtime.
+
+When the downtime occurs and data cannot be recovered, we will export the database files from the most recent image and organize them to bring the service back online, minimizing losses.
+
+At the same time, in order to avoid the possible high load and the service is not available, we need to monitor the HTTP status code and run an alternate server while the service is running. Usually, this standby server can use load balancing to provide services simultaneously with the primary server. If the number of HTTP exception status codes (5xx errors) spikes due to server-generated errors, we can switch the current DNS resolution to switch the software to a better-availability server. Or reduce the DNS weight of high-load servers to ensure high availability of software services.
 
 
 
