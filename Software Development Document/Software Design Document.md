@@ -677,34 +677,63 @@ This module use music and face image as input, in which muisc is already stored 
 
 ###7.3.2 Rest Client
 
-####7.3.2.1 Add the emotion label using service music emotion recognition
+####Add Emotion Label Using Service Music Emotion Recognition
+
+**URL** 
+
+Nothing
+
+**Method** 
+
+Nothing
+
+**Interface**
+
+Nothing
+
+**Algorithm**
 
 When a music is added into the database, we will use the facial recognition service to automatically add a emotion label to the music.
 
-####7.3.2.2 Generate a playlist with specific emotion according to the user's mood using the facial mood recognition service and recommendation service
+####Generate a playlist with specific emotion according to the user's mood using the facial mood recognition service and recommendation service
+
+**URL** 
+
+/api/emotion/playlist/
+
+**Method** 
+
+GET
+
+**Interface**
+
+| IO     | name | type       | Notes    |
+| ------ | ---- | ---------- | -------- |
+| Input  | img  | ByteStream |          |
+| Output | \    | JSON       | Playlist |
+
+**Algorithm**
 
 When the uer click on a specific button named "Emotion Player Button", the camera firstly capture a facial image of the user and then use the facial empotion recognition service to get the user's emotion, and then use the recommendation service to recommend music with specific mood to the user with cprresponding facial emotion.
 
 ### 7.3.3 Service
 
-####7.3.3.1 Facial Mood Recognition
+####Facial Mood Recognition
 
-- I/O Form
+**Interface**
 
 | Name         | I/O    | Data Type | Range           |
 | ------------ | ------ | --------- | --------------- |
 | Facial Image | Input  | Binary    | 0~20 MB         |
 | Face Emotion | Output | String    | 0~10 characters |
 
-- Internal Logic
+**Algorithm**
 
 This service takes user's facial photo as input and output user's mood. Emotive analytics is an interesting blend of psychology and technology. Though arguably reductive, many facial expression detection tools lump human emotion into 7 main categories: Joy, Sadness, Anger, Fear, Surprise, Contempt, and Disgust. With facial emotion detection, algorithms detect faces within a photo, and sense micro expressions by analyzing the relationship between points on the face, based on curated databases compiled in academic environments. The most popular and precise models are neural networks. We might choose one of the facial mood recognition API mentioned here (https://nordicapis.com/20-emotion-recognition-apis-that-will-leave-you-impressed-and-concerned/) as our facial mood recognition service.
 
+#### Music Emotion Recognition
 
-
-#### 7.3.3.2 Music Emotion Recognition
-
-- I/O Form
+**Interface**
 
 | Name    | I/O    | Data Type     | Range            |
 | ------- | ------ | ------------- | ---------------- |
@@ -712,15 +741,15 @@ This service takes user's facial photo as input and output user's mood. Emotive 
 | Audio   | Input  | Binary Stream | 0~20MB           |
 | Emotion | Output | String        | 0~10 character   |
 
-- Internal Logic
+**Algorithm**
 
 This service takes music (including audio and lyrics) as input, and output the emotion of the music. The recognition of musical mood is not as mature as that of facial mood. There is a state-of-the-art research combining lyrics (sentiment analysis in NLP) with audio (CNN) to get a bimodal neural network to classify the emotion of music (https://arxiv.org/abs/1809.07276). For pure music without lyrics, we only use audio neural network to do the classification. We will try to implement this neural network from scratch to fulfill the requirement of this service. We will also consider using this repo on github (https://github.com/danz1ka19/Music-Emotion-Recognition) as reference.
 
 The architechture of the deep neural network for music emotion recognition is like the following,
 
-![music_reco_arch](/Users/junming/Desktop/Projects/Documents/Software Development Document/pic/music_reco_arch.png)
+![music_reco_arch](./pic/music_reco_arch.png)
 
-####7.3.3.3 Recommendation
+####Recommendation
 
 The mapping from the facial mood to musical emotion is as following:
 
@@ -731,7 +760,7 @@ The mapping from the facial mood to musical emotion is as following:
 |    Anger    |      Calm       |
 |  Surprise   |     Excited     |
 
-Using this mapping form, we recommend music with specific mood to the user with cprresponding facial emotion.
+Using this mapping form, we recommend music with specific mood to the user with corresponding facial emotion.
 
 
 
