@@ -32,6 +32,76 @@ This document defines the design portion of the software. The document includes 
 
 ### 1.3.1 HTTP Status Code
 
+All HTTP response status codes are separated into five classes (or categories). The first digit of the status code defines the class of response. The last two digits do not have any class or categorization role. There are five values for the first digit.
+
+- 1xx (Informational): The request was received, continuing process
+- 2xx (Successful): The request was successfully received, understood, and accepted
+- 3xx (Redirection): Further action needs to be taken in order to complete the request
+- 4xx (Client Error): The request contains bad syntax or cannot be fulfilled
+- 5xx (Server Error): The server failed to fulfill an apparently valid request
+
+#### 200 OK
+
+Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request, the response will contain an entity describing or containing the result of the action.
+
+#### 301 Moved Permanently
+
+This and all future requests should be directed to the given URI.
+
+#### 303 See Other (since HTTP/1.1)
+
+The response to the request can be found under another [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using the GET method. When received in response to a POST (or PUT/DELETE), the client should presume that the server has received the data and should issue a new GET request to the given URI.
+
+#### 400 Bad Request
+
+The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).
+
+#### 401 Unauthorized ([RFC 7235](https://tools.ietf.org/html/rfc7235))
+
+Similar to *403 Forbidden*, but specifically for use when authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource. 
+
+Note: Some sites incorrectly issue HTTP 401 when an IP address is banned from the website (usually the website domain) and that specific address is refused permission to access a website.
+
+#### 403 Forbidden
+
+The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource, or may need an account of some sort.
+
+#### 404 Not Found
+
+The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+
+#### 405 Method Not Allowed
+
+A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via [POST](https://en.wikipedia.org/wiki/POST_(HTTP)), or a PUT request on a read-only resource.
+
+#### 406 Not Acceptable
+
+The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.
+
+#### 408 Request Timeout
+
+The server timed out waiting for the request. According to HTTP specifications: "The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time."
+
+#### 500 Internal Server Error
+
+A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+
+#### 501 Not Implemented
+
+The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API).
+
+#### 502 Bad Gateway
+
+The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+
+#### 503 Service Unavailable
+
+The server cannot handle the request (because it is overloaded or down for maintenance). Generally, this is a temporary state.
+
+#### 504 Gateway Timeout
+
+The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.
+
 ### 1.3.2 Special Noun
 
 - CURD
@@ -42,7 +112,6 @@ This document defines the design portion of the software. The document includes 
 
   REST is acronym for REpresentational State Transfer. It is architectural style for distributed hypermedia systems and was first presented by Roy Fielding in 2000 in his famous dissertation.
 
-- 
 
 # 2. References 
 
