@@ -611,7 +611,7 @@ Music information is available to all users, while moods are users' privacy and 
 
 **URL** 
 
-/api/register
+/api/register/
 
 **Method** 
 
@@ -634,7 +634,7 @@ Create a Django user and bind the User Profile.
 
 **URL** 
 
-/api/login
+/api/login/
 
 **Method** 
 
@@ -656,7 +656,7 @@ Check user info by django's built-in function and login or return status=403 whe
 
 **URL** 
 
-/api/logout
+/api/logout/
 
 **Method** 
 
@@ -719,9 +719,11 @@ All backend exceptions are presented as HTTP status codes. For information about
 
 The frontend will encapsulate all requests, perform a unified processing of some HTTP error codes, and handle other HTTP errors that may occur at runtime in the Store. For example, the front end will directly encapsulate the 401 Unauthorized Request. When this error occurs, the user is directed to log in to the system.
 
-## 8.2 Disaster tolerance (Optional)
+## 8.2 Disaster Tolerance (Optional)
 
 This part of the functionality is optional considering the complexity of the project and the development cycle.
+
+![disaster_tolerance](./pic/sdd/disaster_tolerance.jpg)
 
 Since we are using SQLite3, there is no need to consider the remote disaster recovery of the database. We only need to consider a regular mirror backup of the server running the program to prevent data loss problems caused by downtime.
 
