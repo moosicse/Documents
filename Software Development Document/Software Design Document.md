@@ -40,65 +40,65 @@ All HTTP response status codes are separated into five classes (or categories). 
 - 4xx (Client Error): The request contains bad syntax or cannot be fulfilled
 - 5xx (Server Error): The server failed to fulfill an apparently valid request
 
-#### 200 OK
+**200 OK**
 
 Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request, the response will contain an entity describing or containing the result of the action.
 
-#### 301 Moved Permanently
+**301 Moved Permanently**
 
 This and all future requests should be directed to the given URI.
 
-#### 303 See Other (since HTTP/1.1)
+**303 See Other (since HTTP/1.1)**
 
 The response to the request can be found under another [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using the GET method. When received in response to a POST (or PUT/DELETE), the client should presume that the server has received the data and should issue a new GET request to the given URI.
 
-#### 400 Bad Request
+**400 Bad Request**
 
 The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).
 
-#### 401 Unauthorized ([RFC 7235](https://tools.ietf.org/html/rfc7235))
+**401 Unauthorized ([RFC 7235](https://tools.ietf.org/html/rfc7235))**
 
 Similar to *403 Forbidden*, but specifically for use when authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource. 
 
 Note: Some sites incorrectly issue HTTP 401 when an IP address is banned from the website (usually the website domain) and that specific address is refused permission to access a website.
 
-#### 403 Forbidden
+**403 Forbidden**
 
 The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource, or may need an account of some sort.
 
-#### 404 Not Found
+**404 Not Found**
 
 The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
 
-#### 405 Method Not Allowed
+**405 Method Not Allowed**
 
 A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via [POST](https://en.wikipedia.org/wiki/POST_(HTTP)), or a PUT request on a read-only resource.
 
-#### 406 Not Acceptable
+**406 Not Acceptable**
 
 The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.
 
-#### 408 Request Timeout
+**408 Request Timeout**
 
 The server timed out waiting for the request. According to HTTP specifications: "The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time."
 
-#### 500 Internal Server Error
+**500 Internal Server Error**
 
 A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
 
-#### 501 Not Implemented
+**501 Not Implemented**
 
 The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability (e.g., a new feature of a web-service API).
 
-#### 502 Bad Gateway
+**502 Bad Gateway**
 
 The server was acting as a gateway or proxy and received an invalid response from the upstream server.
 
-#### 503 Service Unavailable
+**503 Service Unavailable**
 
 The server cannot handle the request (because it is overloaded or down for maintenance). Generally, this is a temporary state.
 
-#### 504 Gateway Timeout
+**504 Gateway Timeout**
 
 The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.
 
@@ -170,10 +170,14 @@ The Controller layer is subdivided into two parts - the Rest Client and the Serv
 ![internal_architecture_controller](./pic/sdd/internal_architecture_controller.jpg)
 
 The figure [Internal Architecture: Controllers] is an abstract architecture diagram of the Controller, where the vertical is divided into Module and the horizontal is divided into software architecture layers. Different Service will be divided according to different Modules, and the location where the Service code is placed is the location of the Model that is mainly responsible for it. Different Clients will also be divided according to the Module. The Service layer and the Rest Client layer in each Module form the Controller layer of the Module.
-The main function of the Rest Client layer is to encapsulate the CURD interface, aggregate the Service function, and encapsulate the API that conforms to the Rest standard to the front end. Unlike the traditional MVC architecture, users do not have direct access to the input interfaces of the Rest Client package. Requests made by users to these interfaces will be proxy accessed by the front end. For questions related to the Rest standard, please refer to [2.References].
+
+The main function of the Rest Client layer is to encapsulate the CURD interface, aggregate the Service function, and encapsulate the API that conforms to the Rest standard to the front end. Unlike the traditional MVC architecture, users do not have direct access to the input interfaces of the Rest Client package. Requests made by users to these interfaces will be proxy accessed by the front end. For questions related to the Rest standard, please refer to [2.References](#2. References).
+
 The functions provided by the Rest layer from top to bottom are paging module (optional), serialization module, user permission control module, Query Set and View Set encapsulation module. In the program, there will be a separately designed Permission Control module to judge the user rights. The serialization module and the paging module will also be designed independently to meet the low coupling degree of the software.
 
-The Service layer encapsulates code blocks that satisfy the following conditions: reusable, or logically complex, or some of the most widely used database operations. For example, in our Mood Recognition module, song sentiment analysis can be packaged as a stand-alone Service, while face emotion analysis can also be used as a separate service package. When Rest Client is working, it can selectively call different services according to their own functions and combine their functions.
+The Service layer encapsulates code blocks that satisfy the following conditions: reusable, or logically complex, or some of the most widely used database operations. For example, in our Mood Recognition module, song sentiment analysis can be packaged as a stand-alone Service, while face emotion analysis can also be used as a separate service package. When Rest Client is working, it can selectively call different services according to their own functions and combine their functions. The following figure [Relations Between Rest Client and Service] shows the relationship between the Rest Client and the Service.
+
+![internal_architecture_controller_relation](./pic/sdd/internal_architecture_controller_relation.jpg)
 
 #### Models Internal Design
 
@@ -223,6 +227,8 @@ The backend currently uses the SQLite3 database. As a start-up project, the data
 
 ## 4.1 Module Decomposition 
 
+![module_recognition](./pic/sdd/module_recognition.jpg)
+
 ### 4.1.1 Module Music 
 
 #### Overview
@@ -246,6 +252,16 @@ The Module User is used to store all user-related information, including user at
 The Module User stores user-related information. Whether the user is a Staff or Super Administrator is set and executed by the Django Authentication module. Some songs require permission control, and the Module User can set a permission group Model separately. When the song needs permission control, the user is added to the permission group, and the song is set to the permission, so that the authority can control the song. Doing so allows users to privately upload songs or share songs in small circles.
 
 User preferences and recent mood information will also be stored in the Module User. This allows the program to better push songs or filter songs for the user, allowing the program to do smarter things.
+
+### 4.1.3 Module Mood Recognition
+
+#### Overview
+
+The Mood Recognition module is used to handle mood recognition related operations. Since the module may need to design a larger calculation, we need to separate this module. At the same time, since this module only performs arithmetic operations, in the future when software functions and pressures are large, we can use an additional machine to handle the calculation of this module. Differentiating this module also makes it easy for different developers to develop independent modules.
+
+#### Scope
+
+This module will use the neural network for mood recognition operations. For example, the song mood is recognized based on the binary stream of music and the lyrics, and the current mood is recognized based on the face image. This module also handles the recommended tasks, using the recommendation algorithm to generate a song list for the user based on the current mood and mood of the music.
 
 ## 4.2 Business Process Decomposition
 
@@ -277,7 +293,7 @@ After the modeling is completed and the music mood score is given, we need to es
 
 The neural network is based on existing facial recognition methods and provides a multi-dimensional user facial expression scoring, such as happiness, sadness, anger, and the like. The model needs to be as lean as possible and able to judge the user's mood faster. In the business process, we first ask the user to agree to take the user's face image, then judge the user's mood, and finally recommend the song according to the recommendation method described above.
 
-# 5 Dependency Description
+# 5. Dependency Description
 
 Only important program dependencies will be introduced here.
 
@@ -411,7 +427,7 @@ GNU General Public License v3.0
 
 <https://github.com/ansible/ansible/blob/devel/COPYING>
 
-# 6 Interface and Service Description
+# 6. Interface and Service Description
 
 ## 6.1 User Interface Description
 
@@ -431,7 +447,7 @@ Song emotions are basically judged from waveforms of music. While calm music usu
 
 We may implement the algorithms ourselves, or using APIs directly.
 
-# 7 Module Detailed Design
+# 7. Module Detailed Design
 
 **Note**: Since the Rest Framework already encapsulates a complete set of CURD data interfaces, we don't have to code for simple data reads and writes. For example, we can get song information directly under the conditions allowed by the Permission Control module.
 
@@ -690,7 +706,7 @@ The mapping from the facial mood to musical emotion is as following:
 |    Anger    |      Calm       |
 |  Surprise   |     Excited     |
 
-# 8 Exception Handling
+# 8. Exception Handling
 
 ## 8.1 Software Exception Handling
 
