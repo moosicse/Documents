@@ -90,7 +90,7 @@ Therefore, we divide the Controller into two parts, one is the Views part of the
 
 #### Overall Design and Dataflow
 
-![internal_architecture](.\pic\sdd\internal_architecture.jpg)
+![internal_architecture](./pic/sdd/internal_architecture.jpg)
 
 You can see from the above figure [Internal Architecture] how the MVC architecture works in general and data flow. As mentioned above, View is responsible for rendering the interface. The View receives data from the Controller and renders it to the user. The Controller is responsible for data processing and can be subdivided into two parts: Rest Client and Service. In these two parts, the Rest Client part is closer to the View part, and the Service and Model parts are closer. View only interacts with the Rest Client, and the Rest Client and Service allow data interaction with the Model layer. The Model layer is the abstract expression and highly encapsulated database, and provides the object-oriented access interface of the database by means of ORM.
 
@@ -98,7 +98,7 @@ You can see from the above figure [Internal Architecture] how the MVC architectu
 
 The Controller layer is subdivided into two parts - the Rest Client and the Service layer. The Rest Client layer is close to the View, when the Service layer is close to the Model. The Rest Client layer, as its name implies, mainly performs tasks that encapsulate the API that conforms to the Rest standards, and handles some simple CURD operations, as well as permission control. The Service layer is a collection of frequently used, highly encapsulated APIs. Some algorithms with large computational complexity and complex logic are also encapsulated at this layer.
 
-![internal_architecture_controller](.\pic\sdd\internal_architecture_controller.jpg)
+![internal_architecture_controller](./pic/sdd/internal_architecture_controller.jpg)
 
 The figure [Internal Architecture: Controllers] is an abstract architecture diagram of the Controller, where the vertical is divided into Module and the horizontal is divided into software architecture layers. Different Service will be divided according to different Modules, and the location where the Service code is placed is the location of the Model that is mainly responsible for it. Different Clients will also be divided according to the Module. The Service layer and the Rest Client layer in each Module form the Controller layer of the Module.
 The main function of the Rest Client layer is to encapsulate the CURD interface, aggregate the Service function, and encapsulate the API that conforms to the Rest standard to the front end. Unlike the traditional MVC architecture, users do not have direct access to the input interfaces of the Rest Client package. Requests made by users to these interfaces will be proxy accessed by the front end. For questions related to the Rest standard, please refer to [2.References].
@@ -108,7 +108,7 @@ The Service layer encapsulates code blocks that satisfy the following conditions
 
 #### Models Internal Design
 
-![internal_architecture_model](.\pic\sdd\internal_architecture_model.jpg)
+![internal_architecture_model](./pic/sdd/internal_architecture_model.jpg)
 
 We use a relational database as the database used by the data storage module. The database and ORM encapsulation layer are broadly defined as the Model layer. In the diagram above [Internal Architecture: Models], we can see how the database and the ORM package module work. In actual programming, we only need to consider how the content in the database is stored. Referring to the data sheet located below the figure, the parts we need to consider are
 
@@ -121,7 +121,7 @@ We use a relational database as the database used by the data storage module. Th
 
 #### Views Internal Design
 
-![internal_architecture_view](.\pic\sdd\internal_architecture_view.jpg)
+![internal_architecture_view](./pic/sdd/internal_architecture_view.jpg)
 
 In fact, the View layer and the other two layers use different code repositories that run in different environments. The View layer and the Controller layer communicate using an API that conforms to the Rest standard. Referring to the figure above [Internal Architecture: Views], when the user accesses the page, the HTTP packet is first received by the page Router and analyzes the URI condition, and different pages are rendered according to different URIs. The page is first divided into Layout design, which includes Header, Footer, Nav Sider and the main Content section. The Content part is the entry of the Container, and each Container consists of several Components. The data interaction is all done by the Store, and the Less is used as the front-end style rendering module.
 
