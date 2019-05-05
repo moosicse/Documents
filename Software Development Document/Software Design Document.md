@@ -6,12 +6,12 @@ Author: Touko, JeremyCJM, Colorofnight, Kyriezoe
 
 __Version Control__
 
-| Version | Date       | Participant | Description                             |
-| ------- | ---------- | ----------- | --------------------------------------- |
-| 0.1     | 2019-04-28 | Touko       | Initialize the Software Design Document |
-| 0.2     | 2019-04-29 | JeremyCJM   | Updated the detailed design part        |
-| 1       | 2019-05-03 | Touko       | Version Alpha                           |
-| 1.1     | 2019-05-05 | Touko       | Enrich document content                 |
+| Version | Date       | Participant      | Description                             |
+| ------- | ---------- | ---------------- | --------------------------------------- |
+| 0.1     | 2019-04-28 | Touko            | Initialize the Software Design Document |
+| 0.2     | 2019-04-29 | JeremyCJM        | Updated the detailed design part        |
+| 1       | 2019-05-03 | Touko            | Version Alpha                           |
+| 1.1     | 2019-05-05 | Touko, JeremyCJM | Enrich document content                 |
 
 __GitHub Repository__
 
@@ -692,7 +692,7 @@ The program will check if the song has user group field and check that if the us
 
 This module use music and face image as input, in which muisc is already stored in the module music. The face image is directly shoot by camera, so there is **no** need to set up a database for this module.
 
-###7.3.2 Rest Client
+### 7.3.2 Rest Client
 
 ####Add Emotion Label Using Service Music Emotion Recognition
 
@@ -748,6 +748,10 @@ When the uer click on a specific button named "Emotion Player Button", the camer
 
 This service takes user's facial photo as input and output user's mood. Emotive analytics is an interesting blend of psychology and technology. Though arguably reductive, many facial expression detection tools lump human emotion into 7 main categories: Joy, Sadness, Anger, Fear, Surprise, Contempt, and Disgust. With facial emotion detection, algorithms detect faces within a photo, and sense micro expressions by analyzing the relationship between points on the face, based on curated databases compiled in academic environments. The most popular and precise models are neural networks. We might choose one of the facial mood recognition API mentioned here (https://nordicapis.com/20-emotion-recognition-apis-that-will-leave-you-impressed-and-concerned/) as our facial mood recognition service.
 
+There are existing deep neural network code on github: https://github.com/WuJie1010/Facial-Expression-Recognition.Pytorch
+
+Normally the standard facial expression recognition dataset is FER2013: https://www.kaggle.com/deadskull7/fer2013
+
 #### Music Emotion Recognition
 
 **Interface**
@@ -765,6 +769,8 @@ This service takes music (including audio and lyrics) as input, and output the e
 The architechture of the deep neural network for music emotion recognition is like the following,
 
 ![music_reco_arch](./pic/music_reco_arch.png)
+
+- Alternative design: Give the music emotion label by hand or scratch emotion playlist on NetEase.
 
 ####Recommendation
 
