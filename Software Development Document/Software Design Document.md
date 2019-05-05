@@ -11,6 +11,7 @@ __Version Control__
 | 0.1     | 2019-04-28 | Touko       | Initialize the Software Design Document |
 | 0.2     | 2019-04-29 | JeremyCJM   | Updated the 7.3 part                    |
 | 1       | 2019-05-03 | Touko       | Version Alpha                           |
+| 1.1     | 2019-05-05 | Touko       | Enrich document content                 |
 
 __GitHub Repository__
 
