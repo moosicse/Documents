@@ -116,6 +116,9 @@ The server was acting as a gateway or proxy and did not receive a timely respons
 
 # 2. References 
 
+- 20+ Emotion Recognition APIs That Will Leave You Impressed, and Concerned - <https://nordicapis.com/20-emotion-recognition-apis-that-will-leave-you-impressed-and-concerned/>
+- Music Mood Detection Based On Audio And Lyrics With Deep Neural Net - <https://arxiv.org/abs/1809.07276>
+- Music-Emotion-Recognition - <https://github.com/danz1ka19/Music-Emotion-Recognition>
 - Django - <https://docs.djangoproject.com/en/2.2/>
 - Django Rest Framework - <https://www.django-rest-framework.org/>
 - Representational State Transfer (REST) - <https://restfulapi.net/>
