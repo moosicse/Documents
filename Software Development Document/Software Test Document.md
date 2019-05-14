@@ -1,0 +1,463 @@
+# Software Test Document
+
+__Project Moosic__
+
+Author: Colorofnight, Touko
+
+__Version Control__
+
+| Version | Date       | Participant  | Description                                  |
+| ------- | ---------- | ------------ | -------------------------------------------- |
+| 0.1     | 2019-05-11 | Colorofnight | Initialize the Software Test Documentation   |
+| 0.2     | 2019-05-13 | Colorofnight | Translate the contents of table into English |
+| 0.3     | 2019-05-14 | Touko        | Markdown                                     |
+
+__GitHub Repository__
+
+<https://github.com/moosicse/>
+
+# 1. Overview
+
+## 1.1 Purpose
+
+This document is a test document for the Project *Moosic*. The purpose is to design the test plan and test cases for the software so that the tester can accept the project based on this document.
+
+The intended readers of this manual are software developers, software testers, and project reviewers (QA Team).
+
+## 1.2 Scope
+
+This document defines the test portion of the software. The document includes test schedule, test design for acceptance testing, system testing, integration testing and unit testing, and test cases for the four testing mentioned before.
+
+## 1.3 Test Objectives
+
+Test documentation is designed according to the following documents.
+
+| **Documents**                    | **Version** | **Date**   |
+| -------------------------------- | ----------- | ---------- |
+| *Moosic Requirement Engineering* | 1.0         | 2019-05-05 |
+| *Software Design Document*       | 1.1         | 2019-05-05 |
+
+The test object is the functional modules in the requirements document and the system architecture in the brief design document.
+
+## 1.4 Audience
+
+- Project team members perform tasks specified in this document, and provide input and recommendations on this document.
+- The QA team reviews the test documents and can participate in the tests to guarantee the test results and software quality.
+
+# 2. Document Standard References
+
+- IEEE Std. 829-2008, standard for software and system test documentation IEEE computer society
+- 软件设计文档国家标准-测试计划（GB8567--88）
+
+# 3. Definitions and Abbreviations
+
+**Black-box Testing**
+
+A method of software testing that examines the functionality of an application without peering into its internal structures or workings.
+
+**Shuffle play mode**
+
+The next song to play is not certain and can be any songs in the song list.
+
+**Favs**
+
+The list of songs that you like, or your favorite songs.
+
+**Test Result(P/F)**
+
+P=Pass, F=Failed.
+
+**SQL injection**
+
+SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution
+
+**IEEE**
+
+Institute of Electrical and Electronics Engineers, the world's largest association of technical professionals, its objectives are the educational and technical advancement of electrical and electronic engineering, telecommunications, computer engineering and allied disciplines.
+
+# 4. Test Processes
+
+## 4.1 Test Process Management
+
+For such a small project, we don't have to use any management tools, instead it is managed manually.
+
+## 4.2 Test Process Design
+
+The tester will understand each requirement and prepare corresponding test case to ensure all requirements are covered.
+
+Each Test case will be mapped to Use cases to Requirements Document.
+
+Each of the Test cases will undergo review by the QA team and the review defects are captured and shared to the Test team. The testers will rework on the review defects and finally obtain approval.
+
+## 4.3 Test Process Execution
+
+Once all Test cases are approved and the test environment is ready for testing, tester will start a exploratory test of the application to ensure the application is stable for testing.
+
+Each tester performs step by step execution and updates the executions status. 
+
+Tester will prepare a Run chart with execution details.
+
+Daily Test execution status as well as Defect status will be reported to all stakeholders. And QA team can participant in it in order to ensure all test cases are executed with either pass/fail category.
+
+# 5. Acceptance Testing
+
+## 5.1 Testing Plan
+
+The testers and date is shown in the table 5.1 blew.
+
+| Function         | Test Method   | Tester   | Deadline |
+| -------------------- | ----------------- | ------------ | ------------ |
+| Privacy Protection   | Black-box Testing | Kyriezoe     | 2019-06-10   |
+| Mood Recognition     | Black-box Testing | JeremyCJM    | 2019-06-10   |
+| Music Classification | Black-box Testing | Kyriezoe     | 2019-06-10   |
+| Music Player         | Black-box Testing | JeremyCJM    | 2019-06-10   |
+| Music Recommendation | Black-box Testing | Colorofnight | 2019-06-10   |
+| Music Management     | Black-box Testing | Touko        | 2019-06-10   |
+| Music Community      | Black-box Testing | Kyriezoe     | 2019-06-10   |
+
+*Table 5-1 Acceptance Test Plan*
+
+## 5.2 Testing Environment
+
+- Operating system: Windows/Linux/Mac (Android in the future)
+
+- Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
+
+- Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, except IE
+
+- Network: 10Mbps bandwidth network
+
+- Data: User data, song and lyrics files, and well configured software on the server
+
+## 5.3 Test Point
+
+### 5.3.1 Privacy Protection
+
+**Function Module: Login Interface**
+
+| **ID** | **Description**                                          |
+| ------ | -------------------------------------------------------- |
+| 01     | Login correctly                                          |
+| 02     | Login when the username is empty                         |
+| 03     | Login when the password is empty                         |
+| 04     | Enter illegal characters (which may cause SQL injection) |
+| 05     | Determine if the entered account exists                  |
+| 06     | Login with the wrong password                            |
+| 07     | Sign up                                                  |
+| 08     | Account that signed up has already existed               |
+
+*Table 5-2 Private Protection Test Point*
+
+Tips: The module does not mention the password recovery function. The function module which is left blank is the same as the function module at the top line.
+
+### 5.3.2 Mood Recognition
+
+**Function Module: Mood Recognition**
+
+| **ID** | **Description**                          |
+| ------ | ---------------------------------------- |
+| 09     | Take photo and recognition correctly     |
+| 10     | Whether the camera be called correctly   |
+| 11     | Whether the camera takes photo correctly |
+
+*Table 5-3 Mood Recognition Test Point*
+
+### 5.3.3 Music Classification
+
+**Function Module: Music Classification**
+
+| **ID** | **Description**                                              |
+| ------ | ------------------------------------------------------------ |
+| 12     | Classify music correctly                                     |
+| 13     | Different emotions contained in lyrics and melody            |
+| 14     | Emotion expressed by music is different from melody and lyrics |
+
+*Table 5-4 Music Classification Test Point*
+
+Tips: Manual classification does not demand this part of test point.
+
+### 5.3.4 Music Player
+
+**Function Module: Music Player**
+
+| 15   | Play                  |
+| ---- | --------------------- |
+| 16   | Pause                 |
+| 17   | Resume                |
+| 18   | Volume adjustment     |
+| 19   | Play the last music   |
+| 20   | Play the next music   |
+| 21   | Loop Single play mode |
+| 22   | Loop All play mode    |
+| 23   | Shuffle play mode     |
+
+*Table 5-5 Music Player Test Point*
+
+### 5.3.5 Music Recommendation
+
+**Function Module: Music Recommendation**
+
+| **ID** | **Description**                          |
+| ------ | ---------------------------------------- |
+| 24     | Recommend music that match your emotions |
+| 25     | Camera cannot be called correctly        |
+| 26     | Mood recognition failed                  |
+| 27     | Recommendation for angry mood            |
+
+*Table 5-6 Music Recommendation Test Point*
+
+### 5.3.6 Music Management
+
+**Function Module: Music Management**
+
+| **ID** | **Description**       |
+| ------ | --------------------- |
+| 28     | Upload                |
+| 29     | Download              |
+| 30     | Set as Favs           |
+| 31     | Remove from Favs      |
+| 32     | Create song list      |
+| 33     | Collect to song list  |
+| 34     | Delete song list      |
+| 35     | Remove from song list |
+
+*Table 5-7 Music Management Test Point*
+
+### 5.3.7 Music Community
+
+**Function Module: Music Comment**
+
+| 36   | Comment on song page |
+| ---- | -------------------- |
+| 37   | Delete Comments      |
+
+*Table 5-8-1 Music Community Test Point*
+
+**Function Module: Friend**
+
+| 38   | Add as friend          |
+| ---- | ---------------------- |
+| 39   | Delete friend          |
+| 40   | Send message to friend |
+| 41   | Share songs to friend  |
+
+*Table 5-8-2 Music Community Test Point*
+
+**Function Module: Status**
+
+| 42   | Post status   |
+| ---- | ------------- |
+| 43   | Delete status |
+
+*Table 5-8-3 Music Community Test Point*
+
+## 5.4 Test Case
+
+See Appendix A for Test Cases.
+
+# 6.  System Testing
+
+## 6.1 Testing Plan
+
+The testers and date is shown in the table 6.1 blew.
+
+| Testing Approaches | Tester   | Deadline |
+| ---------------------- | ------------ | ------------ |
+| Performance Test       | Colorofnight | 2019-06-10   |
+| Recovery test          | Colorofnight | 2019-06-10   |
+| Safety test            | Touko        | 2019-06-10   |
+| Configuration test     | Touko        | 2019-06-10   |
+| Installation test      | Colorofnight | 2019-06-10   |
+| Compatibility test     | Touko        | 2019-06-10   |
+
+*Table 6-1 System Test Plan*
+
+## 6.2 Testing Environment
+
+Operating system: Windows/Linux/Mac (Android in the future)
+
+Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
+
+Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, except IE
+
+Network: 10Mbps bandwidth network
+
+Data: User data, song and lyrics files, and well configured software on the server
+
+## 6.3 Test Case
+
+### 6.3.1 Performance Test/Pressure Test
+Gradually increase the size of the song file and test how big the file can be played without being stuck.
+At the same time, let multiple users play the same song and see how many users can make the system crash.
+
+### 6.3.2 Recovery Test
+When playing music, unplug the network cable, and then connect to see if you can resume playback and resume playback from the breakpoint.
+Modify the user information and disconnect the network to see if the information is lost and the software is damaged.
+
+### 6.3.3 Safety Test
+Use SQL injection when logging in to see if you can invade the system.
+Do not register users to open multiple processes to see if the system is defective.
+
+### 6.3.4 Configuration Test
+Software: Whether need to change browser configurations?
+Hardware: Can the camera be called normally?
+
+### 6.3.5 Installation Test
+The software is a web application that requires only a browser to use the system without the need to install tests.
+
+### 6.3.6 Compatibility Test
+Use different browsers, different kernel browsers, different versions of browsers, and even mobile browsers to test system compatibility.
+
+# Annex A  Acceptance Test Cases
+
+## Login Test Case
+
+| Attributes          | Values                                                       |
+| ------------------- | ------------------------------------------------------------ |
+| Project | Moosic |
+| Creator    | Colorofnight |
+| Date    | 2019-05-11 |
+| Module  | Login  |
+| Identifier | M-L-1        |
+| Related | N/A        |
+| | |
+| Function            | User authentication                                          |
+| Purpose of Test     | Prevent illegal input and protect private information        |
+| Preconditions       | User information exists in the database: Username=user, Password=123456 |
+| Reference Documents | *Moosic Requirement Engineering*                             |
+
+| ID     | Test Steps                                          | Input                                    | Expected Result                                              | Actual Result | Test Result(P/F) |
+| ------ | --------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ | ------------- | ---------------- |
+| 01     | Enter Username and Password, click login            | Username=user, Password=123456           | Enter the system and display the personal page               |               |                  |
+| 02     | Username is empty, click login                      | Username is empty                        | Enter the system(visitor mode)                               |               |                  |
+| 03     | Enter Username, click login                         | Username=user, Password is empty         | Show warning "Please enter password"                         |               |                  |
+| 04     | Enter illegal Username, Enter Password, click login | Username='or 'a'='a, Password='or 'a'='a | Show warning "Username contains illegal characters"          |               |                  |
+| 05     | Enter Username and Password, click login            | Username=user1, Password=123456          | Show warning "Username does not exist" instead of  "wrong Password" |               |                  |
+| 06     | Enter Username and Password, click login            | Username=user, Password=123457           | Show warning "wrong Password"                                |               |                  |
+| 07     | Enter Username and Password, click sign up          | Username=user1, Password=12345           | Show message "sign up successfully"                          |               |                  |
+| 08     | Enter Username and Password, click sign up          | Username=user, Password=12345            | Show warning "Username already exists"                       |               |                  |
+| Tester |                                                     | Developer                                |                                                              | Principal     |                  |
+
+*Table A-1 Login Test Case*
+
+##  Recognition Test Case
+
+| Attributes          | Values                                     |
+| ------------------- | ------------------------------------------ |
+| Project | Moosic      |
+| Creator    | Colorofnight |
+| Date    | 2019-05-11     |
+| Module  | Recognition |
+| Identifier | M-R-1        |
+| Related | Recommendation |
+| | |
+| Function            | Mood Recognition                           |
+| Purpose of Test     | Whether identify the user's mood correctly |
+| Preconditions       | Recognition Algorithm trains well          |
+| Reference Documents | *Software Design Document*                 |
+
+| ID     | Test Steps                                            | Input                            | Expected Result                                              | Actual Result | Test Result(P/F) |
+| ------ | ----------------------------------------------------- | -------------------------------- | ------------------------------------------------------------ | ------------- | ---------------- |
+| 09     | Call camera and take facial expressions               | Facial expressions               | Output correct mood to recommendation module                 |               |                  |
+| 10     | The call of camera is refused                         | No input                         | Prompt "cannot call camera"                                  |               |                  |
+| 11     | Call camera and take photo without facial expressions | Image without facial expressions | Prompt "identify mood failure", output failure to recommendation module |               |                  |
+| Tester |                                                       | Developer                        |                                                              | Principal     |                  |
+
+*Table A-2 Recognition Test Case*
+
+## Classification Test Case
+
+| Attributes          | Values                               |
+| ------------------- | ------------------------------------ |
+| Project | Moosic         |
+| Creator    | Colorofnight |
+| Date    | 2019-05-11     |
+| Module  | Classification |
+| Identifier | M-C-1        |
+| Related | Recommendation |
+| | |
+| Function            | Music Classification                 |
+| Purpose of Test     | Whether classify music correctly     |
+| Preconditions       | Classification Algorithm trains well |
+| Reference Documents | *Software Design Document*           |
+
+| ID     | Test Steps                                                   | Input                                            | Expected Result                              | Actual Result | Test Result(P/F) |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------ | -------------------------------------------- | ------------- | ---------------- |
+| 12     | Upload music and lyrics (optional) and call algorithm  to identify | Music file and lyrics file (optional)            | Output corresponding emotion classification  |               |                  |
+| 13     | Upload music and lyrics and call algorithm  to identify      | Music file and another music's lyrics file       | Prompt "requires manual classification"      |               |                  |
+| 14     | Upload music and lyrics and call algorithm  to identify      | Caricature music with cheerful melody and lyrics | No expectation, as it's difficult to achieve | ——            |                  |
+| Tester |                                                              | Developer                                        |                                              | Principal     |                  |
+
+*Table A-3 Classification Test Case*
+
+Tips: Manual classification does not demand this part of test case.
+
+## Music Player Test Case
+
+| Attributes          | Values                              |
+| ------------------- | ----------------------------------- |
+| Project             | Moosic                              |
+| Creator             | Colorofnight                        |
+| Date                | 2019-05-11                          |
+| Module              | Player                              |
+| Identifier          | M-P-1                               |
+| Related             | N/A                                 |
+|                     |                                     |
+| Function            | Music Player                        |
+| Purpose of Test     | Whether play music correctly        |
+| Preconditions       | There are music files on the server |
+| Reference Documents | *Moosic Requirement Engineering*    |
+
+| ID     | Test Steps                                | Input                                         | Expected Result                                              | Actual Result | Test Result(P/F) |
+| ------ | ----------------------------------------- | --------------------------------------------- | ------------------------------------------------------------ | ------------- | ---------------- |
+| 15     | Choose music and click Play button        | Song name and "play" control message          | Music plays from start to end, allowing for a short pause    |               |                  |
+| 16     | Click Pause button when playing music     | "pause" control message                       | Music pauses                                                 |               |                  |
+| 17     | Click Resume button when music is pausing | Pause time and "resume" control message       | Music plays at the pause location                            |               |                  |
+| 18     | Click + & - button when playing music     | "volume up" and "volume down" control message | Volume up and down                                           |               |                  |
+| 19     | Click Next button when playing music      | "next" control message                        | Play the last one if exists, otherwise stop playing          |               |                  |
+| 20     | Click Last button when playing music      | "last" control message                        | Play the next one if exists, otherwise stop playing          |               |                  |
+| 21     | Set play mode as Loop Single              | "loop single" control message                 | Replay the music after it is finished                        |               |                  |
+| 22     | Set play mode as Loop All                 | "loop all" control message                    | Play the song list in order, and play the first song after finish the list |               |                  |
+| 23     | Set play mode as Shuffle                  | "shuffle" control message                     | Randomly play a song in the list after playing a song        |               |                  |
+| Tester |                                           | Developer                                     |                                                              | Principal     |                  |
+
+*Table A-4 Music Player Test Case*
+
+## Recommendation Test Case
+
+| Attributes          | Values                                         |
+| ------------------- | ---------------------------------------------- |
+| Project             | Moosic                                         |
+| Creator             | Colorofnight                                   |
+| Date                | 2019-05-11                                     |
+| Module              | Recommendation                                 |
+| Identifier          | M-R-2                                          |
+| Related             | Recognition & Classification                   |
+|                     |                                                |
+| Function            | Music Recommendation                           |
+| Purpose of Test     | Whether recommend music correctly              |
+| Preconditions       | Recognition and Classification module is ready |
+| Reference Documents | *Software Design Document*                     |
+
+| ID     | Test Steps                    | Input                         | Expected Result                                | Actual Result | Test Result(P/F) |
+| ------ | ----------------------------- | ----------------------------- | ---------------------------------------------- | ------------- | ---------------- |
+| 24     | Take the user's expression    | User's mood like happy        | Recommend the corresponding music              |               |                  |
+| 25     | Camera cannot be called       | No input                      | Randomly recommended songs with different mood |               |                  |
+| 26     | Emotional recognition failure | Failure                       | No response                                    |               |                  |
+| 27     | Take some special expression  | Special expression like angry | Recommend the calm style music                 |               |                  |
+| Tester |                               | Developer                     |                                                | Principal     |                  |
+
+*Table A-5 Recommendation Test Case*
+
+
+
+
+
+
+
+
+
+
+
+
+
