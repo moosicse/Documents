@@ -13,6 +13,10 @@ __Version Control__
 | 1.0     | 2019-05-05 | Colorofnight | Version Alpha                                     |
 | 1.1     | 2019-06-12 | Colorofnight | Revise                                            |
 
+__GitHub Repository__
+
+<https://github.com/moosicse/>
+
 # 1. Introduction
 
 ## 1.1 Purpose
