@@ -122,15 +122,15 @@ The testers and date is shown in the table 5.1 blew.
 
 ## 5.2 Testing Environment
 
-- Operating system: Windows/Linux/Mac (Android in the future)
+Operating system: Windows/Linux/Mac (Android in the future)
 
-- Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
+Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
 
-- Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, except IE
+Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, except IE
 
-- Network: 10Mbps bandwidth network
+Network: 10Mbps bandwidth network
 
-- Data: User data, song and lyrics files, and well configured software on the server
+Data: User data, song and lyrics files, and well configured software on the server
 
 ## 5.3 Test Point
 
