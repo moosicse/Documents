@@ -31,7 +31,7 @@ Democratic organizational structure, the decisions in the development are made t
 
 ## 1.2 External Interfaces
 
-__Table: *Table 1 External Interfaces*__
+*Table 1 External Interfaces*
 
 |Organizations|Contacts|Contact Info|
 |:-----------:|:------:|:----------:|
@@ -41,7 +41,7 @@ __Table: *Table 1 External Interfaces*__
 
 ## 1.3 Roles and Responsibilities
 
-__Table: *Table 2 Roles and Responsibilities*__
+*Table 2 Roles and Responsibilities*
 
 |Role|Responsibility|Person|
 |:--:|:------------:|:----:|
@@ -68,7 +68,7 @@ The person in charge of each development process records the progress of the wor
 
 ## 3.4 Risk Management Plan
 
-__Table: *Table 3 Risk Management Plan*__
+*Table 3 Risk Management Plan*
 
 |Risk ID|Risk|Probability|Impact|Priority|Mitigating|principal|Expected Date|
 |:-----:|:--:|:---------:|-----:|:------:|:--------:|:-------:|:-----------:|
@@ -124,7 +124,7 @@ Based on the completion of the basic functions, the project documentation and co
 
 ## 5.1 Inner Support
 
-__Table: *Table 4 Inner Support*__
+*Table 4 Inner Support*
 
 |Support Project|Principal|Product|Description|
 |:-------------:|:-------:|:-----:|:---------:|
@@ -156,7 +156,7 @@ __Table: *Table 4 Inner Support*__
 
 #### 5.2.1.1 Features to be tested
 
-__Table: *Table 5 Features to be tested*__
+*Table 5 Features to be tested*
 
 |Module Name|Description|Tester|
 |:---------:|:---------:|:----:|
