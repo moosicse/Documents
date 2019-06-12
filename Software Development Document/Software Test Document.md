@@ -11,6 +11,8 @@ __Version Control__
 | 0.1     | 2019-05-11 | Colorofnight | Initialize the Software Test Documentation   |
 | 0.2     | 2019-05-13 | Colorofnight | Translate the contents of table into English |
 | 0.3     | 2019-05-14 | Touko        | Markdown                                     |
+| 1.0     | 2019-05-19 | Colorofnight | Add Test Cases                               |
+| 1.0     | 2019-06-12 | Colorofnight | Revise                                       |
 
 __GitHub Repository__
 
@@ -105,6 +107,8 @@ Daily Test execution status as well as Defect status will be reported to all sta
 
 The testers and date is shown in the table 5.1 blew.
 
+*Table 5-1 Acceptance Test Plan*
+
 | Function         | Test Method   | Tester   | Deadline |
 | -------------------- | ----------------- | ------------ | ------------ |
 | Privacy Protection   | Black-box Testing | Kyriezoe     | 2019-06-10   |
@@ -115,7 +119,6 @@ The testers and date is shown in the table 5.1 blew.
 | Music Management     | Black-box Testing | Touko        | 2019-06-10   |
 | Music Community      | Black-box Testing | Kyriezoe     | 2019-06-10   |
 
-*Table 5-1 Acceptance Test Plan*
 
 ## 5.2 Testing Environment
 
@@ -135,6 +138,8 @@ The testers and date is shown in the table 5.1 blew.
 
 **Function Module: Login Interface**
 
+*Table 5-2 Private Protection Test Point*
+
 | **ID** | **Description**                                          |
 | ------ | -------------------------------------------------------- |
 | 01     | Login correctly                                          |
@@ -146,13 +151,13 @@ The testers and date is shown in the table 5.1 blew.
 | 07     | Sign up                                                  |
 | 08     | Account that signed up has already existed               |
 
-*Table 5-2 Private Protection Test Point*
-
 Tips: The module does not mention the password recovery function. The function module which is left blank is the same as the function module at the top line.
 
 ### 5.3.2 Mood Recognition
 
 **Function Module: Mood Recognition**
+
+*Table 5-3 Mood Recognition Test Point*
 
 | **ID** | **Description**                          |
 | ------ | ---------------------------------------- |
@@ -160,19 +165,18 @@ Tips: The module does not mention the password recovery function. The function m
 | 10     | Whether the camera be called correctly   |
 | 11     | Whether the camera takes photo correctly |
 
-*Table 5-3 Mood Recognition Test Point*
 
 ### 5.3.3 Music Classification
 
 **Function Module: Music Classification**
 
-| **ID** | **Description**                                              |
-| ------ | ------------------------------------------------------------ |
-| 12     | Classify music correctly                                     |
-| 13     | Different emotions contained in lyrics and melody            |
-| 14     | Emotion expressed by music is different from melody and lyrics |
-
 *Table 5-4 Music Classification Test Point*
+
+| **ID** | **Description**                                                   |
+| ------ | ----------------------------------------------------------------- |
+| 12     | Classify music correctly                                          |
+| 13     | Different emotions contained in lyrics and melody                 |
+| 14     | Emotion expressed by music is different between melody and lyrics |
 
 Tips: Manual classification does not demand this part of test point.
 
@@ -180,22 +184,26 @@ Tips: Manual classification does not demand this part of test point.
 
 **Function Module: Music Player**
 
-| 15   | Play                  |
-| ---- | --------------------- |
-| 16   | Pause                 |
-| 17   | Resume                |
-| 18   | Volume adjustment     |
-| 19   | Play the last music   |
-| 20   | Play the next music   |
-| 21   | Loop Single play mode |
-| 22   | Loop All play mode    |
-| 23   | Shuffle play mode     |
-
 *Table 5-5 Music Player Test Point*
+
+| **ID** | **Description**       |
+| ------ | --------------------- |
+| 15     | Play                  |
+| 16     | Pause                 |
+| 17     | Resume                |
+| 18     | Volume adjustment     |
+| 19     | Play the last music   |
+| 20     | Play the next music   |
+| 21     | Loop Single play mode |
+| 22     | Loop All play mode    |
+| 23     | Shuffle play mode     |
+
 
 ### 5.3.5 Music Recommendation
 
 **Function Module: Music Recommendation**
+
+*Table 5-6 Music Recommendation Test Point*
 
 | **ID** | **Description**                          |
 | ------ | ---------------------------------------- |
@@ -204,11 +212,12 @@ Tips: Manual classification does not demand this part of test point.
 | 26     | Mood recognition failed                  |
 | 27     | Recommendation for angry mood            |
 
-*Table 5-6 Music Recommendation Test Point*
 
 ### 5.3.6 Music Management
 
 **Function Module: Music Management**
+
+*Table 5-7 Music Management Test Point*
 
 | **ID** | **Description**       |
 | ------ | --------------------- |
@@ -221,19 +230,20 @@ Tips: Manual classification does not demand this part of test point.
 | 34     | Delete song list      |
 | 35     | Remove from song list |
 
-*Table 5-7 Music Management Test Point*
 
 ### 5.3.7 Music Community
 
 **Function Module: Music Comment**
 
+*Table 5-8 Music Community Test Point*
+
 | 36   | Comment on song page |
 | ---- | -------------------- |
 | 37   | Delete Comments      |
 
-*Table 5-8-1 Music Community Test Point*
 
 **Function Module: Friend**
+
 
 | 38   | Add as friend          |
 | ---- | ---------------------- |
@@ -241,15 +251,13 @@ Tips: Manual classification does not demand this part of test point.
 | 40   | Send message to friend |
 | 41   | Share songs to friend  |
 
-*Table 5-8-2 Music Community Test Point*
-
 **Function Module: Status**
+
 
 | 42   | Post status   |
 | ---- | ------------- |
 | 43   | Delete status |
 
-*Table 5-8-3 Music Community Test Point*
 
 ## 5.4 Test Case
 
@@ -261,6 +269,8 @@ See Appendix A for Test Cases.
 
 The testers and date is shown in the table 6.1 blew.
 
+*Table 6-1 System Test Plan*
+
 | Testing Approaches | Tester   | Deadline |
 | ---------------------- | ------------ | ------------ |
 | Performance Test       | Colorofnight | 2019-06-10   |
@@ -269,8 +279,6 @@ The testers and date is shown in the table 6.1 blew.
 | Configuration test     | Touko        | 2019-06-10   |
 | Installation test      | Colorofnight | 2019-06-10   |
 | Compatibility test     | Touko        | 2019-06-10   |
-
-*Table 6-1 System Test Plan*
 
 ## 6.2 Testing Environment
 
@@ -308,9 +316,40 @@ The software is a web application that requires only a browser to use the system
 ### 6.3.6 Compatibility Test
 Use different browsers, different kernel browsers, different versions of browsers, and even mobile browsers to test system compatibility.
 
+# 7.  Integration Testing
+
+## 7.1 Testing Plan
+Consider integration testing. When some services provide more
+meta-operational aggregation operations, the design of the integration
+test is required. For example, design an integrated operation test for
+uploading songs.
+
+*Table 7-1 System Test Plan*
+
+|Test                 |Identifier |Tester|
+| ------------------- | --------- | ---- |
+|Upload Music         |M-Integ-UM ||
+|Play Music List      |M-Integ-PML||
+|Share Music to Friend|M-Integ-SMF||
+|Get Music by Mood    |M-Integ-GMM||
+
+## 7.2 Testing Environment
+Operating system: Windows/Linux/Mac (Android in the future)
+
+Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
+
+Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, but exclude IE; Django; Django Rest Framework; React; Mobx
+
+Data: User data, song and lyrics files, and well configured software on the server
+
+## 7.3 
+See Appendix B for Test Use Cases.
+
 # Annex A  Acceptance Test Cases
 
 ## Login Test Case
+
+*Table A-1 Login Test Case*
 
 | Attributes          | Values                                                       |
 | ------------------- | ------------------------------------------------------------ |
@@ -338,9 +377,10 @@ Use different browsers, different kernel browsers, different versions of browser
 | 08     | Enter Username and Password, click sign up          | Username=user, Password=12345            | Show warning "Username already exists"                       |               |                  |
 | Tester |                                                     | Developer                                |                                                              | Principal     |                  |
 
-*Table A-1 Login Test Case*
 
 ##  Recognition Test Case
+
+*Table A-2 Recognition Test Case*
 
 | Attributes          | Values                                     |
 | ------------------- | ------------------------------------------ |
@@ -363,9 +403,10 @@ Use different browsers, different kernel browsers, different versions of browser
 | 11     | Call camera and take photo without facial expressions | Image without facial expressions | Prompt "identify mood failure", output failure to recommendation module |               |                  |
 | Tester |                                                       | Developer                        |                                                              | Principal     |                  |
 
-*Table A-2 Recognition Test Case*
 
 ## Classification Test Case
+
+*Table A-3 Classification Test Case*
 
 | Attributes          | Values                               |
 | ------------------- | ------------------------------------ |
@@ -388,11 +429,12 @@ Use different browsers, different kernel browsers, different versions of browser
 | 14     | Upload music and lyrics and call algorithm  to identify      | Caricature music with cheerful melody and lyrics | No expectation, as it's difficult to achieve | ——            |                  |
 | Tester |                                                              | Developer                                        |                                              | Principal     |                  |
 
-*Table A-3 Classification Test Case*
 
 Tips: Manual classification does not demand this part of test case.
 
 ## Music Player Test Case
+
+*Table A-4 Music Player Test Case*
 
 | Attributes          | Values                              |
 | ------------------- | ----------------------------------- |
@@ -421,9 +463,10 @@ Tips: Manual classification does not demand this part of test case.
 | 23     | Set play mode as Shuffle                  | "shuffle" control message                     | Randomly play a song in the list after playing a song        |               |                  |
 | Tester |                                           | Developer                                     |                                                              | Principal     |                  |
 
-*Table A-4 Music Player Test Case*
 
 ## Recommendation Test Case
+
+*Table A-5 Recommendation Test Case*
 
 | Attributes          | Values                                         |
 | ------------------- | ---------------------------------------------- |
@@ -447,7 +490,7 @@ Tips: Manual classification does not demand this part of test case.
 | 27     | Take some special expression  | Special expression like angry | Recommend the calm style music                 |               |                  |
 | Tester |                               | Developer                     |                                                | Principal     |                  |
 
-*Table A-5 Recommendation Test Case*
+
 
 
 
