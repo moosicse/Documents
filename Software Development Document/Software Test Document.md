@@ -12,7 +12,7 @@ __Version Control__
 | 0.2     | 2019-05-13 | Colorofnight | Translate the contents of table into English |
 | 0.3     | 2019-05-14 | Touko        | Markdown                                     |
 | 1.0     | 2019-05-19 | Colorofnight | Add Test Cases                               |
-| 1.0     | 2019-06-12 | Colorofnight | Revise                                       |
+| 1.1     | 2019-06-12 | Colorofnight | Revise                                       |
 
 __GitHub Repository__
 
@@ -36,7 +36,7 @@ Test documentation is designed according to the following documents.
 
 | **Documents**                    | **Version** | **Date**   |
 | -------------------------------- | ----------- | ---------- |
-| *Moosic Requirement Engineering* | 1.0         | 2019-05-05 |
+| *Moosic Requirement Document*    | 1.0         | 2019-05-05 |
 | *Software Design Document*       | 1.1         | 2019-05-05 |
 
 The test object is the functional modules in the requirements document and the system architecture in the brief design document.
@@ -107,7 +107,7 @@ Daily Test execution status as well as Defect status will be reported to all sta
 
 The testers and date is shown in the table 5.1 blew.
 
-*Table 5-1 Acceptance Test Plan*
+*Table 5.1 Acceptance Test Plan*
 
 | Function         | Test Method   | Tester   | Deadline |
 | -------------------- | ----------------- | ------------ | ------------ |
@@ -138,7 +138,7 @@ The testers and date is shown in the table 5.1 blew.
 
 **Function Module: Login Interface**
 
-*Table 5-2 Private Protection Test Point*
+*Table 5.2 Private Protection Test Point*
 
 | **ID** | **Description**                                          |
 | ------ | -------------------------------------------------------- |
@@ -157,7 +157,7 @@ Tips: The module does not mention the password recovery function. The function m
 
 **Function Module: Mood Recognition**
 
-*Table 5-3 Mood Recognition Test Point*
+*Table 5.3 Mood Recognition Test Point*
 
 | **ID** | **Description**                          |
 | ------ | ---------------------------------------- |
@@ -170,7 +170,7 @@ Tips: The module does not mention the password recovery function. The function m
 
 **Function Module: Music Classification**
 
-*Table 5-4 Music Classification Test Point*
+*Table 5.4 Music Classification Test Point*
 
 | **ID** | **Description**                                                   |
 | ------ | ----------------------------------------------------------------- |
@@ -184,7 +184,7 @@ Tips: Manual classification does not demand this part of test point.
 
 **Function Module: Music Player**
 
-*Table 5-5 Music Player Test Point*
+*Table 5.5 Music Player Test Point*
 
 | **ID** | **Description**       |
 | ------ | --------------------- |
@@ -203,7 +203,7 @@ Tips: Manual classification does not demand this part of test point.
 
 **Function Module: Music Recommendation**
 
-*Table 5-6 Music Recommendation Test Point*
+*Table 5.6 Music Recommendation Test Point*
 
 | **ID** | **Description**                          |
 | ------ | ---------------------------------------- |
@@ -217,7 +217,7 @@ Tips: Manual classification does not demand this part of test point.
 
 **Function Module: Music Management**
 
-*Table 5-7 Music Management Test Point*
+*Table 5.7 Music Management Test Point*
 
 | **ID** | **Description**       |
 | ------ | --------------------- |
@@ -232,31 +232,32 @@ Tips: Manual classification does not demand this part of test point.
 
 
 ### 5.3.7 Music Community
+*Table 5.8 Music Community Test Point*
 
 **Function Module: Music Comment**
 
-*Table 5-8 Music Community Test Point*
-
-| 36   | Comment on song page |
-| ---- | -------------------- |
-| 37   | Delete Comments      |
+| **ID** | **Description**      |
+| ------ | -------------------- |
+| 36     | Comment on song page |
+| 37     | Delete Comments      |
 
 
 **Function Module: Friend**
 
+| **ID** | **Description**        |
+| ----   | ---------------------- |
+| 38     | Add as friend          |
+| 39     | Delete friend          |
+| 40     | Send message to friend |
+| 41     | Share songs to friend  |
 
-| 38   | Add as friend          |
-| ---- | ---------------------- |
-| 39   | Delete friend          |
-| 40   | Send message to friend |
-| 41   | Share songs to friend  |
 
 **Function Module: Status**
 
-
-| 42   | Post status   |
-| ---- | ------------- |
-| 43   | Delete status |
+| **ID** | **Description** |
+| ------ | --------------- |
+| 42     | Post status     |
+| 43     | Delete status   |
 
 
 ## 5.4 Test Case
@@ -269,7 +270,7 @@ See Appendix A for Test Cases.
 
 The testers and date is shown in the table 6.1 blew.
 
-*Table 6-1 System Test Plan*
+*Table 6.1 System Test Plan*
 
 | Testing Approaches | Tester   | Deadline |
 | ---------------------- | ------------ | ------------ |
@@ -324,7 +325,7 @@ meta-operational aggregation operations, the design of the integration
 test is required. For example, design an integrated operation test for
 uploading songs.
 
-*Table 7-1 System Test Plan*
+*Table 7.1 System Test Plan*
 
 |Test                 |Identifier |Tester|
 | ------------------- | --------- | ---- |
@@ -349,7 +350,7 @@ See Appendix B for Test Use Cases.
 
 ## Login Test Case
 
-*Table A-1 Login Test Case*
+*Table A.1 Login Test Case*
 
 | Attributes          | Values                                                       |
 | ------------------- | ------------------------------------------------------------ |
@@ -380,7 +381,7 @@ See Appendix B for Test Use Cases.
 
 ##  Recognition Test Case
 
-*Table A-2 Recognition Test Case*
+*Table A.2 Recognition Test Case*
 
 | Attributes          | Values                                     |
 | ------------------- | ------------------------------------------ |
@@ -406,7 +407,7 @@ See Appendix B for Test Use Cases.
 
 ## Classification Test Case
 
-*Table A-3 Classification Test Case*
+*Table A.3 Classification Test Case*
 
 | Attributes          | Values                               |
 | ------------------- | ------------------------------------ |
@@ -434,7 +435,7 @@ Tips: Manual classification does not demand this part of test case.
 
 ## Music Player Test Case
 
-*Table A-4 Music Player Test Case*
+*Table A.4 Music Player Test Case*
 
 | Attributes          | Values                              |
 | ------------------- | ----------------------------------- |
@@ -466,7 +467,7 @@ Tips: Manual classification does not demand this part of test case.
 
 ## Recommendation Test Case
 
-*Table A-5 Recommendation Test Case*
+*Table A.5 Recommendation Test Case*
 
 | Attributes          | Values                                         |
 | ------------------- | ---------------------------------------------- |
@@ -491,16 +492,64 @@ Tips: Manual classification does not demand this part of test case.
 | Tester |                               | Developer                     |                                                | Principal     |                  |
 
 
+# Annex B  Integartion Test Cases
+
+## Upload Music Test Case
+
+*Table B-1 Upload Music Test Case*
+
+| Attributes          | Values                                         |
+| ------------------- | ---------------------------------------------- |
+| Identifier          | M-Integ-UM                                     |
+| Fuction             | Upload Music                                   |
+| Purpose of Test     | Test the correctness of the database and the backend implementation, and the search function |
+| Preconditions       | Account has logged in; A music file            |
+| Test Steps          | 1.Click "Upload music" button, Choose the music prepared  2.Fill in the name of the song(like A) and the singer(like B)  3.Click "Upload" button, show message  4.if success, search for A or B in the search bar |
+| Expected Result     | 1.Show message "Upload success"  2.we can find the music we uploaded in search result(search for A) or all music include A that singer B sings(search for B) |
+|                     |  |
+| Test Environment    |  |
+| Test Data           |  |
+| Result Description  |  |
+| Test Result (P/F)   |  |
+| Tester              |  |
 
 
+## Play List Test Case
+
+*Table B.2 Play Music List Test Case*
+
+| Attributes          | Values                                         |
+| ------------------- | ---------------------------------------------- |
+| Identifier          | M-Integ-PML                                    |
+| Fuction             | Play Music List                                |
+| Purpose of Test     | Test the music play mode, music list and online music play |
+| Preconditions       | At least 5 piece of music on server; Account has logged in |
+| Test Steps          | 1.Create a music list  2.Add at least 5 piece of music to the music list  3.Play music in the music list  4.Adjust volume and click next/last button  5.Change play mode and wait for the next music |
+| Expected Result     | Each step can run correctly and in right logic |
+|                     |  |
+| Test Environment    |  |
+| Test Data           |  |
+| Result Description  |  |
+| Test Result (P/F)   |  |
+| Tester              |  |
 
 
+## Share Music Test Case
 
+*Table B.3 Share Music Test Case*
 
-
-
-
-
-
-
+| Attributes          | Values                                         |
+| ------------------- | ---------------------------------------------- |
+| Identifier          | M-Integ-SMF                                    |
+| Fuction             | Share Music                                    |
+| Purpose of Test     | Test the friend and share fuction              |
+| Preconditions       | Two accounts A and B; Music M                  |
+| Test Steps          | 1.A enter friend interface  2.A search for B, and click "add as friend" button  3.B recieve message in friend interface and click "accept"  4.A enter M's music page and click "share" and select B  5.B recieve the shared message and click it |
+| Expected Result     | Each step can run correctly and in right logic |
+|                     |  |
+| Test Environment    |  |
+| Test Data           |  |
+| Result Description  |  |
+| Test Result (P/F)   |  |
+| Tester              |  |
 
