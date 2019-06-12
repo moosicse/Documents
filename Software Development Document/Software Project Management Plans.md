@@ -2,7 +2,17 @@
 
 __Project Moosic__
 
-Author: JeremyCJM
+Author: JeremyCJM, Colorofnight
+
+| Version | Date       | Participant  | Description                                       |
+| ------- | ---------- | ------------ | ------------------------------------------------- |
+| 0.1     | 2019-04-27 | JeremyCJM    | Initialize the Software Project Management Plans  |
+| 1.0     | 2019-05-05 | Colorofnight | Markdown                                          |
+| 1.1     | 2019-06-12 | JeremyCJM    | Revise                                            |
+
+GitHub Repository
+
+https://github.com/moosicse/
 
 # 1. Overview
 
@@ -51,7 +61,7 @@ Democratic organizational structure, the decisions in the development are made t
 
 # 3. Management Process Plan
 
-## 3.1 Start-up Plan
+## 3.1 Start-Up Plan
 
 Each member of the team can make their own opinions regardless of their role, and all members of the team will decide whether to adopt them. Decisions need to be approved by the team members before they can be implemented. After the decision is made, it should be supervised by relevant personnel to ensure that the decision can be completed sooner after the decision is made. The progress of the team development should be completed as soon as possible, and the test progress of the product should also be carried out on time. Products should follow the proposed specifications and be carried out in strict accordance with pre-set documentation. The project code is readable so that they are easy to maintain. The project should run steadily and have good user interaction. The project should try to meet the needs of music lovers and provide music lovers with a good platform for music management and daily use.
 
