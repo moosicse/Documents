@@ -8,8 +8,8 @@ __Version Control__
 
 | Version | Date       | Participant  | Description                                       |
 | ------- | ---------- | ------------ | ------------------------------------------------- |
-| 0.1     | 2019-04-20 | Colorofnight | Initialize the Software Requirement Specification |
-| 0.2     | 2019-05-04 | JeremyCJM    | Updated the Software Requirement Specification    |
+| 0.1     | 2019-04-20 | Colorofnight | Initialize the Software Requirement Document      |
+| 0.2     | 2019-05-04 | JeremyCJM    | Updated the Software Requirement Document         |
 | 1.0     | 2019-05-05 | Colorofnight | Version Alpha                                     |
 | 1.1     | 2019-06-12 | Colorofnight | Revise                                            |
 
