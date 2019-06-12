@@ -36,7 +36,7 @@ Test documentation is designed according to the following documents.
 
 | **Documents**                    | **Version** | **Date**   |
 | -------------------------------- | ----------- | ---------- |
-| *Moosic Requirement Document*    | 1.0         | 2019-05-05 |
+| *Software Requirement Document*  | 1.1         | 2019-06-12 |
 | *Software Design Document*       | 1.1         | 2019-05-05 |
 
 The test object is the functional modules in the requirements document and the system architecture in the brief design document.
