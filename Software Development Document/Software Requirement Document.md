@@ -1,8 +1,8 @@
-# Software Requirement Specification
+# Software Requirement Document
 
 __Project Moosic__
 
-Author: Colorofnight
+Author: Colorofnight, JeremyCJM
 
 __Version Control__
 
@@ -11,14 +11,15 @@ __Version Control__
 | 0.1     | 2019-04-20 | Colorofnight | Initialize the Software Requirement Specification |
 | 0.2     | 2019-05-04 | JeremyCJM    | Updated the Software Requirement Specification    |
 | 1.0     | 2019-05-05 | Colorofnight | Version Alpha                                     |
+| 1.1     | 2019-06-12 | Colorofnight | Revise                                            |
 
 # 1. Introduction
 
-## 1.1 Purpose of this document
+## 1.1 Purpose
 
 The purpose of this document is to provide a reference and overview of the requirements for a website and social presence for the Mood-based Music storing and sharing platform.
 
-## 1.2 Scope of this document
+## 1.2 Scope
 
 The requirement elicitation consisted of Touko, JeremyCJM, Colorofnight and Kyrie. These members were responsible for obtaining and presenting the requirement information that exists in this document.
 
@@ -172,7 +173,7 @@ This system can be used directly by accessing a given ip with a web browser.
 
 A basic internet connection is required to view the website, which uses TCP/IP network protocol.
 
-## 4.5 development tools
+## 4.5 Development Tools
 
 The IDA website utilizes the following web components:
 - Django
@@ -185,25 +186,25 @@ Database support:
 
 # 5. Performance Requirements
 
-## 5.1 Software requirement
+## 5.1 Software Requirement
 
 The Moosic website will require a computer with an active internet connection to be able to view the website and its camera to capture images. The computer's web browser must be Internet Explorer 6 or above, Firefox, Chrome, or any current browser able to view a website with W3C certification.
 
-## 5.2 Hardware requirement
+## 5.2 Hardware Requirement
 
 The system will handle malicious interface calls or sporadic errors, such as returning a 403 HTTP status code.
 The server should run at 1GHz CPU speed and 1G memory under the Linux operating system. In addition to static files of songs, at least 100M space should be reserved.
 The API server must have at least 1 Mbps of bandwidth, and the music storage server should have at least 10 Mbps of bandwidth.
 
-## 5.3 Network requirement
+## 5.3 Network Requirement
 
 For the user, a network with 10M bandwidth is required, while for API server, only 1M bandwidth is enough.
 
-## 5.4 System performance requirment
+## 5.4 System Performance Requirment
 
 The system should be able to meet the concurrency of about 10 people.Guarantee that 99% of the API can be made within 1000ms. The remaining APIs that may not be completed within the specified time should be accelerated to 5000ms using methods such as caching. 
 
-# 6. Other non-functional attributes
+# 6. Other Non-Functional Attributes
 
 ## 6.1 Security
 
@@ -225,7 +226,7 @@ The web presence should be viewed on all computers with an internet connection p
 
 The home page shall provide an efficient, aesthetically pleasing layout that can be used as a foundation for any upcoming sub pages or a future overhaul of the website.
 
-## 6.6 Application Affinity/Compatibility
+## 6.6 Application Affinity / Compatibility
 
 The web presence shall be compatible with all modern web browsers (IE 6+, Chrome, Firefox, Safari, etc.).
 
