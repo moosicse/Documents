@@ -340,9 +340,9 @@ Operating system: Windows/Linux/Mac (Android in the future)
 
 Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
 
-Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, but exclude IE; Django; Django Rest Framework; React; Mobx
+Software: TravisCI Continuous Integration Service; Codecov
 
-Data: User data, song and lyrics files, and well configured software on the server
+Data: 
 
 ## 7.3 Test Case
 
@@ -362,11 +362,11 @@ Operating system: Windows/Linux/Mac (Android in the future)
 
 Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
 
-Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, except IE; Django; Django Rest Framework; React; Mobx
+Software: Codecov
 
 Network: N/A
 
-Data: User data, song and lyrics files, and well configured software on the server
+Data: Test code built-in unit file
 
 ## 8.3 Test Case
 
