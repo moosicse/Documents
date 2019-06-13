@@ -480,7 +480,7 @@ All music related models will be specified here.
 | genres      | Foreigns(Genre)     | \        | True  | False  |                               |
 | mood        | Dict                | \        | True  | False  |                               |
 | user_group  | Foreigns(UserGroup) | \        | True  | False  | Users who can access          |
-| location    | Char(255)           | \        | False | True   | File path of the song's file. |
+| file        | Char(255)           | \        | False | True   | File path of the song's file. |
 | description | TextField           | \        | True  | False  |                               |
 
 #### Singer
@@ -513,10 +513,12 @@ All music related models will be specified here.
 
 #### Playlist
 
-| Name  | Type           | Default  | Null  | Unique | Notes       |
-| ----- | -------------- | -------- | ----- | ------ | ----------- |
-| id    | Int            | Auto add | False | True   | Primary Key |
-| songs | Foreigns(Song) | \        | True  | False  |             |
+| Name       | Type           | Default  | Null  | Unique | Notes       |
+| ---------- | -------------- | -------- | ----- | ------ | ----------- |
+| id         | Int            | Auto add | False | True   | Primary Key |
+| name       | Char(20)       | \        | False | False  |             |
+| songs      | Foreigns(Song) | \        | True  | False  |             |
+| created_by | Foreign(User)  | \        | True  | False  |             |
 
 ### 7.1.2 Rest Client
 
@@ -602,11 +604,11 @@ Music information is available to all users, while moods are users' privacy and 
 
 #### User Group
 
-| Name | Type                  | Default  | Null  | Unique | Notes       |
-| ---- | --------------------- | -------- | ----- | ------ | ----------- |
-| id   | Int                   | Auto add | False | True   | Primary Key |
-| name | Char(20)              | \        | False | True   |             |
-| user | Foreigns(UserProfile) | \        | True  | False  |             |
+| Name  | Type                  | Default  | Null  | Unique | Notes       |
+| ----- | --------------------- | -------- | ----- | ------ | ----------- |
+| id    | Int                   | Auto add | False | True   | Primary Key |
+| name  | Char(20)              | \        | False | True   |             |
+| users | Foreigns(UserProfile) | \        | True  | False  |             |
 
 ### 7.2.2 Rest Client
 
