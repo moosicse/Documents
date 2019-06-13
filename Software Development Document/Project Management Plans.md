@@ -1,4 +1,4 @@
-# Software Project Management Plans
+# Project Management Plans
 
 __Project Moosic__
 
