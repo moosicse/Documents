@@ -376,14 +376,17 @@ Unit/Integration test cases are placed in the code and will be automatically tes
 Unit/Integration test cases are placed in the code and will be automatically tested with the TravisCI Continuous Integration Service, and the coverage is checked by Codecov, following figures Figure 9.1-9.3 show the test coverage.
 
 ![](pic/Test_result1.png)
+
 __Figure 9.1 Unit/Integration Test Coverage (since software development)__
 
 
 ![](pic/Test_result2.png)
+
 __Figure 9.2 Current Test Use Case Coverage__
 
 
 ![](pic/Test_result3.png)
+
 __Figure 9.3 Test Test Use Coverage of Important Documents__
 
 
