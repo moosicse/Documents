@@ -12,7 +12,8 @@ __Version Control__
 | 0.2     | 2019-05-13 | Colorofnight | Translate the contents of table into English |
 | 0.3     | 2019-05-14 | Touko        | Markdown                                     |
 | 1.0     | 2019-05-19 | Colorofnight | Add Test Cases                               |
-| 1.1     | 2019-06-12 | Colorofnight | Revise                                       |
+| 1.1     | 2019-06-12 | Colorofnight | Update Unit/Integration Testing              |
+| 1.2     | 2019-06-13 | Colorofnight | Revise                                       |
 
 __GitHub Repository__
 
@@ -339,13 +340,56 @@ Operating system: Windows/Linux/Mac (Android in the future)
 
 Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
 
-Software: All mainstream explorer with Webkit, Chromium, Firefox kernel, but exclude IE; Django; Django Rest Framework; React; Mobx
+Software: TravisCI Continuous Integration Service; Codecov
 
-Data: User data, song and lyrics files, and well configured software on the server
+Data: 
 
 ## 7.3 Test Case
 
-See Appendix B for Test Use Cases.
+Unit/integration test cases are placed in the code and will be automatically tested with the TravisCI Continuous Integration Service when uploaded.
+
+# 8.  Unit Testing
+
+## 8.1 Testing Plan
+
+Unit testing is primarily about testing individual functions. In our Controller hierarchy, we need to design the unit design for more independent meta-operations. Every API that can be tested requires a write unit design. For example, we need to write a unit operation to add/delete songs from the playlist and verify that it was successfully added, ie whether the song can be retrieved in this playlist.
+
+Since there are more test cases in the unit test and the test procedure is troublesome and error-prone, we will code to automatically generate test cases and test them. This part will be completed in the coding phase and added to the test documentation.
+
+## 8.2 Testing Environment
+
+Operating system: Windows/Linux/Mac (Android in the future)
+
+Hardware: Build-in or external camera, a server with 1GHz CPU and 1G memory
+
+Software: Codecov
+
+Network: N/A
+
+Data: Test code built-in unit file
+
+## 8.3 Test Case
+
+Unit/Integration test cases are placed in the code and will be automatically tested with the TravisCI Continuous Integration Service when uploaded.
+
+# 9  Test Results
+Unit/Integration test cases are placed in the code and will be automatically tested with the TravisCI Continuous Integration Service, and the coverage is checked by Codecov, following figures Figure 9.1-9.3 show the test coverage.
+
+![](pic/Test_result1.png)
+
+__Figure 9.1 Unit/Integration Test Coverage (since software development)__
+
+
+![](pic/Test_result2.png)
+
+__Figure 9.2 Current Test Use Case Coverage__
+
+
+![](pic/Test_result3.png)
+
+__Figure 9.3 Test Test Use Coverage of Important Documents__
+
+
 
 # Annex A  Acceptance Test Cases
 
